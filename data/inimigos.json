@@ -1,0 +1,212 @@
+{
+    "goblin": {
+        "nome": "Goblin",
+        "status": [
+            "vivo"
+        ],
+        "mana": 100,
+        "defesa": 0,
+        "vida": 100,
+        "habilidades_possiveis": [
+            "soco_fraco",
+            "cura_leve"
+        ],
+        "experiencia": 100,
+        "drops": {
+            "faca": 10,
+            "colar": 10
+        }
+    },
+    "esqueleto": {
+        "nome": "Esqueleto",
+        "status": [
+            "morto-vivo"
+        ],
+        "mana": 85,
+        "defesa": 20,
+        "vida": 80,
+        "habilidades_possiveis": [
+            "flechada",
+            "soco_médio"
+        ],
+        "experiencia": 120,
+        "drops": {
+            "osso": 50,
+            "capacete_de_ferro": 10
+        }
+    },
+    "lobo": {
+        "nome": "Lobo",
+        "status": [
+            "vivo"
+        ],
+        "mana": 90,
+        "defesa": 5,
+        "vida": 75,
+        "habilidades_possiveis": [
+            "mordida",
+            "ataque_rapido",
+            "uivo"
+        ],
+        "experiencia": 80,
+        "drops": {
+            "pele_de_lobo": 40,
+            "presa_de_lobo": 20
+        }
+    },
+    "orc": {
+        "nome": "Orc",
+        "status": [
+            "vivo"
+        ],
+        "mana": 120,
+        "defesa": 15,
+        "vida": 150,
+        "habilidades_possiveis": [
+            "soco_forte",
+            "soco_pesado",
+            "golpe_brutal"
+        ],
+        "experiencia": 180,
+        "drops": {
+            "machado_de_ferro": 15,
+            "carne_de_orc": 50
+        }
+    },
+    "morcego_gigante": {
+        "nome": "Morcego gigante",
+        "status": [
+            "vivo"
+        ],
+        "mana": 70,
+        "defesa": 0,
+        "vida": 55,
+        "habilidades_possiveis": [
+            "mordida",
+            "ataque_rapido",
+            "drenar_sangue"
+        ],
+        "experiencia": 65,
+        "drops": {
+            "asa_de_morcego": 35,
+            "presa_de_morcego": 15
+        }
+    },
+    "zumbi": {
+        "nome": "Zumbi",
+        "status": [
+            "morto-vivo"
+        ],
+        "mana": 60,
+        "defesa": 5,
+        "vida": 130,
+        "habilidades_possiveis": [
+            "mordida",
+            "golpe_podre",
+            "golpe_vampirico"
+        ],
+        "experiencia": 110,
+        "drops": {
+            "carne_podre": 60,
+            "fragmento_osseo": 25
+        }
+    },
+    "cavaleiro_esqueleto": {
+        "nome": "Cavaleiro esqueleto",
+        "status": [
+            "morto-vivo"
+        ],
+        "mana": 110,
+        "defesa": 35,
+        "vida": 120,
+        "habilidades_possiveis": [
+            "corte_raso",
+            "golpe_pesado",
+            "estocada"
+        ],
+        "experiencia": 220,
+        "drops": {
+            "espada_de_ferro": 20,
+            "capacete_de_ferro": 15,
+            "osso": 70
+        }
+    },
+    "mago_sombrio": {
+        "nome": "Mago sombrio",
+        "status": [
+            "vivo"
+        ],
+        "mana": 150,
+        "defesa": 0,
+        "vida": 85,
+        "habilidades_possiveis": [
+            "bola_sombria",
+            "cura_leve",
+            "golpe_vampirico"
+        ],
+        "experiencia": 250,
+        "drops": {
+            "cajado_sombrio": 10,
+            "cristal_magico": 30
+        }
+    },
+    "golem_de_pedra": {
+        "nome": "Golem de pedra",
+        "status": [
+            "vivo"
+        ],
+        "mana": 100,
+        "defesa": 50,
+        "vida": 250,
+        "habilidades_possiveis": [
+            "soco_pesado",
+            "pedrada",
+            "terremoto"
+        ],
+        "experiencia": 300,
+        "drops": {
+            "fragmento_de_pedra": 60,
+            "nucleo_de_golem": 10
+        }
+    },
+    "vampiro": {
+        "nome": "Vampiro",
+        "status": [
+            "morto-vivo"
+        ],
+        "mana": 140,
+        "defesa": 15,
+        "vida": 180,
+        "habilidades_possiveis": [
+            "golpe_vampirico",
+            "drenar_sangue",
+            "cura_media"
+        ],
+        "experiencia": 350,
+        "drops": {
+            "capa_vampirica": 15,
+            "frasco_de_sangue": 40,
+            "anel_sombrio": 5
+        }
+    },
+    "dragao_jovem": {
+        "nome": "Dragao jovem",
+        "status": [
+            "vivo"
+        ],
+        "mana": 180,
+        "defesa": 30,
+        "vida": 350,
+        "habilidades_possiveis": [
+            "mordida",
+            "sopro_de_fogo",
+            "golpe_brutal"
+        ],
+        "experiencia": 600,
+        "drops": {
+            "escama_de_dragao": 50,
+            "presa_de_dragao": 30,
+            "coracao_de_dragao": 5
+        }
+    }
+}

@@ -1,0 +1,67 @@
+{
+  "vivo": {
+    "nome": "Vivo",
+    "tipo": "estado",
+    "descricao": "A entidade esta viva.",
+    "efeitos": []
+  },
+  "morto": {
+    "nome": "Morto",
+    "tipo": "estado",
+    "descricao": "A entidade morreu e nao pode agir.",
+    "efeitos": []
+  },
+  "morto_vivo": {
+    "nome": "Morto-vivo",
+    "tipo": "estado",
+    "descricao": "A entidade pertence a categoria dos mortos-vivos.",
+    "efeitos": []
+  },
+  "atordoado": {
+    "nome": "Atordoado",
+    "tipo": "controle",
+    "descricao": "A entidade perde sua proxima acao.",
+    "duracao_turnos": 1,
+    "efeitos": []
+  },
+  "envenenado": {
+    "nome": "Envenenado",
+    "tipo": "dano_continuo",
+    "descricao": "A entidade perde vida ao longo dos turnos.",
+    "duracao_turnos": 3,
+    "dano_por_turno": 5,
+    "efeitos": []
+  },
+  "queimando": {
+    "nome": "Queimando",
+    "tipo": "dano_continuo",
+    "descricao": "A entidade sofre dano de fogo ao longo dos turnos.",
+    "duracao_turnos": 3,
+    "dano_por_turno": 8,
+    "efeitos": []
+  },
+  "regeneracao": {
+    "nome": "Regeneracao",
+    "tipo": "cura_continua",
+    "descricao": "A entidade recupera vida ao longo dos turnos.",
+    "duracao_turnos": 3,
+    "cura_por_turno": 5,
+    "efeitos": []
+  },
+  "enfraquecido": {
+    "nome": "Enfraquecido",
+    "tipo": "debilitacao",
+    "descricao": "A entidade causa menos dano.",
+    "duracao_turnos": 2,
+    "modificador_dano": -0.25,
+    "efeitos": []
+  },
+  "fortalecido": {
+    "nome": "Fortalecido",
+    "tipo": "beneficio",
+    "descricao": "A entidade causa mais dano.",
+    "duracao_turnos": 3,
+    "modificador_dano": 0.25,
+    "efeitos": []
+  }
+}
