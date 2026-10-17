@@ -7,10 +7,10 @@ class Inimigo:
         self.status = inimigo_json["status"]
         self.mana_maxima = inimigo_json["mana"]
         self.mana = inimigo_json["mana"]
-        self.defesa = inimigo_json["defesa"]
         self.vida_maxima = inimigo_json["vida"]
         self.vida = inimigo_json["vida"]
-        self.experiencia = inimigo_json["experiencia"]
+        self.defesa = inimigo_json["defesa"]
+        self.exp_drop = inimigo_json["exp_drop"]
         self.drops = inimigo_json["drops"]
 
         habilidades_possiveis = inimigo_json["habilidades_possiveis"]

@@ -11,7 +11,7 @@
             "soco_fraco",
             "cura_leve"
         ],
-        "experiencia": 100,
+        "exp_drop": 100,
         "drops": {
             "faca": 10,
             "colar": 10
@@ -29,7 +29,7 @@
             "flechada",
             "soco_médio"
         ],
-        "experiencia": 120,
+        "exp_drop": 120,
         "drops": {
             "osso": 50,
             "capacete_de_ferro": 10
@@ -48,7 +48,7 @@
             "ataque_rapido",
             "uivo"
         ],
-        "experiencia": 80,
+        "exp_drop": 80,
         "drops": {
             "pele_de_lobo": 40,
             "presa_de_lobo": 20
@@ -67,7 +67,7 @@
             "soco_pesado",
             "golpe_brutal"
         ],
-        "experiencia": 180,
+        "exp_drop": 180,
         "drops": {
             "machado_de_ferro": 15,
             "carne_de_orc": 50
@@ -86,7 +86,7 @@
             "ataque_rapido",
             "drenar_sangue"
         ],
-        "experiencia": 65,
+        "exp_drop": 65,
         "drops": {
             "asa_de_morcego": 35,
             "presa_de_morcego": 15
@@ -105,7 +105,7 @@
             "golpe_podre",
             "golpe_vampirico"
         ],
-        "experiencia": 110,
+        "exp_drop": 110,
         "drops": {
             "carne_podre": 60,
             "fragmento_osseo": 25
@@ -124,7 +124,7 @@
             "golpe_pesado",
             "estocada"
         ],
-        "experiencia": 220,
+        "exp_drop": 220,
         "drops": {
             "espada_de_ferro": 20,
             "capacete_de_ferro": 15,
@@ -144,7 +144,7 @@
             "cura_leve",
             "golpe_vampirico"
         ],
-        "experiencia": 250,
+        "exp_drop": 250,
         "drops": {
             "cajado_sombrio": 10,
             "cristal_magico": 30
@@ -163,7 +163,7 @@
             "pedrada",
             "terremoto"
         ],
-        "experiencia": 300,
+        "exp_drop": 300,
         "drops": {
             "fragmento_de_pedra": 60,
             "nucleo_de_golem": 10
@@ -182,7 +182,7 @@
             "drenar_sangue",
             "cura_media"
         ],
-        "experiencia": 350,
+        "exp_drop": 350,
         "drops": {
             "capa_vampirica": 15,
             "frasco_de_sangue": 40,
@@ -202,7 +202,7 @@
             "sopro_de_fogo",
             "golpe_brutal"
         ],
-        "experiencia": 600,
+        "exp_drop": 600,
         "drops": {
             "escama_de_dragao": 50,
             "presa_de_dragao": 30,
