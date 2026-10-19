@@ -90,9 +90,9 @@ class Inimigo:
         linha = "+" + "-" * 46 + "+"
 
         habilidades = "\n".join(
-            f"| - {habilidades_json[id_habilidade]['nome']:<30} "
-            f"Mana: {habilidades_json[id_habilidade]['custo_mana']:>5} |"
-            for id_habilidade in self.habilidades
+            f"| - {habilidades_json[hab]['nome']:<30} "
+            f"Mana: {habilidades_json[hab]['custo_mana']:>5} |"
+            for hab in self.habilidades
         )
 
         drops = "\n".join(
@@ -111,7 +111,7 @@ class Inimigo:
 | Vida: {self.vida:<39}|
 | Mana: {self.mana:<39}|
 | Defesa: {self.defesa:<37}|
-| Experiência: {self.experiencia:<32}|
+| Experiência: {self.exp_drop:<32}|
 {linha}
 |{"HABILIDADES":<46}|
 {habilidades}

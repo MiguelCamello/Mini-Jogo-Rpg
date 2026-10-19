@@ -28,7 +28,7 @@ class Player:
         self.defesa = defesa
         self.inventario = itens
 
-        habilidades_possiveis = [hab for hab in hab_json if hab["tipo"] == "comum"]
+        habilidades_possiveis = [hab for hab in hab_json.values() if hab["raridade"] == "comum"]
         self.habilidades = rm.sample(habilidades_possiveis, 3)
         
     def morrer(self):
@@ -113,3 +113,38 @@ class Player:
 
         self.aplicar_habilidade(habilidades_json, alvo, habilidade_req)
         print(f"{self.nome} usou a habilidade {habilidade_req}")
+
+    def info(self, habilidades_json):
+        linha = "+" + "-" * 46 + "+"
+
+        habilidades = "\n".join(
+            f"| - {habilidades_json[hab]['nome']:<30} "
+            f"Mana: {habilidades_json[hab]['custo_mana']:>5} |"
+            for hab in self.habilidades
+        )
+
+        itens = "\n".join(
+            f"| - {str(itens):<30}|"
+            for item in self.itens.items()
+        )
+
+        print(f"""
+{linha}
+|{"FICHA DO PLAYER":^46}|
+{linha}
+| Nome: {self.nome:<39}|
+| Status: {', '.join(self.status):<37}|
+{linha}
+|{"ATRIBUTOS":<46}|
+| Vida: {self.vida:<39}|
+| Mana: {self.mana:<39}|
+| Defesa: {self.defesa:<37}|
+| Experiência: {self.exp:<32}|
+{linha}
+|{"HABILIDADES":<46}|
+{habilidades}
+{linha}
+|{"INVENTÁRIO":<46}|
+{itens}
+{linha}
+""")
