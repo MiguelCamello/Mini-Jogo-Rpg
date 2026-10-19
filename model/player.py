@@ -1,23 +1,32 @@
+from utils.erros import *
 import random as rm
 
 class Player:
     def __init__(self,
                 hab_json,         
                 nome,
-                status=None,
-                itens=None
+                status=["Vivo"],
+                nivel=1,
+                exp_necessario=200,
+                exp=0,
+                mana_maxima=50,
+                mana=50,
+                vida_maxima=100,
+                vida=100,
+                defesa=10,
+                itens=[]
                 ):
         self.nome = nome
-        self.status = status.copy() if status is not None else ["Vivo"]
-        self.nivel = 1
-        self.exp_necessario = 200
-        self.exp = 0
-        self.mana_maxima = 50
-        self.mana = 50
-        self.vida_maxima = 100
-        self.vida = 100
-        self.defesa = 10
-        self.inventario = itens.copy() if itens is not None else []
+        self.status = status
+        self.nivel = nivel
+        self.exp_necessario = exp_necessario
+        self.exp = exp
+        self.mana_maxima = mana_maxima
+        self.mana = mana
+        self.vida_maxima = vida_maxima
+        self.vida = vida
+        self.defesa = defesa
+        self.inventario = itens
 
         habilidades_possiveis = [hab for hab in hab_json if hab["tipo"] == "comum"]
         self.habilidades = rm.sample(habilidades_possiveis, 3)
@@ -41,7 +50,7 @@ class Player:
     
         dano_final = max(0, dano - defesa_aplicada)
         self.vida = max(0, self.vida - dano_final)
-        if self.vida == 0 and "morto" not in self.status:
+        if self.vida == 0:
             self.morto()
 
     def tomou_efeito(self, efeitos):
@@ -71,8 +80,36 @@ class Player:
     def ganhar_item(self, item):
         self.inventario.append(item)
 
-    #habilidade
+    def habilidades_disponiveis(self, habilidades_json):
+        return [hab for hab in self.habilidades if habilidades_json[hab]["custo_mana" <= self.mana]]
 
-    
+    def aplicar_habilidade(self, habilidades_json, alvo, habilidade_req):
+        habilidade = habilidades_json[habilidade_req]
 
+        if habilidade["tipo"] == "dano":
+            alvo.tomou_dano(
+                dano=habilidade["potencia"],
+                penetracao_defesa=habilidade.get("penetracao_defesa", 0),
+                ignorar_defesa=habilidade.get("ignorar_defesa", False)
+            )
+        if habilidade["tipo"] == "cura":
+            self.vida = min(self.vida_maxima, self.vida + habilidade["cura"])
 
+        if habilidade["tipo"] == "efeito":
+            self.tomou_efeito(habilidade["efeitos"])
+
+    def usar_habilidade(self, habilidades_json, alvo, habilidade_req):
+        if habilidade_req not in habilidades_json:
+            raise HabilidadeInexistenteError(f"A habilidade {habilidade_req} não existe no jogo!")
+
+        if habilidade_req not in self.habilidades:
+            raise HabilidadeNaoAdquiridaError(f"Você não possui a habilidade {habilidade_req}!")
+
+        if not (hab_disp := self.habilidades_disponiveis(habilidades_json)): # comparador morsa := cria variavel e usa na comparação em 1 linha
+            raise ManaInsuficienteError("Você não possui mana suficiente para nenhuma habilidade!")
+
+        if habilidade_req not in hab_disp:
+            raise ManaInsuficienteError("Você não possui mana suficiente para está habilidade!")
+
+        self.aplicar_habilidade(habilidades_json, alvo, habilidade_req)
+        print(f"{self.nome} usou a habilidade {habilidade_req}")

@@ -1,4 +1,5 @@
 from utils.sorteio import sortear_quantidade
+from utils.erros import ManaInsuficienteError
 import random as rm
 
 class Inimigo:
@@ -57,19 +58,15 @@ class Inimigo:
                 continue
             self.status.append(efeito)
 
+    def habilidades_disponiveis(self, habilidades_json):
+        return [hab for hab in self.habilidades if habilidades_json[hab]["custo_mana" <= self.mana]]
 
-    def usar_habilidade(self,alvo,habilidades_json):
-        habilidades_disponiveis = [
-            id_habilidade #identificador da habilidade dentro do json
-            for id_habilidade in self.habilidades
-            if habilidades_json[id_habilidade]["custo_mana"] <= self.mana
-        ]
-        if not habilidades_disponiveis:
-            print(f"{self.nome} não tem mana para usar nenhuma habilidade!")
-            return
+    def usar_habilidade(self,habilidades_json, alvo): # é aleatoria
+        if not (habilidades_disponiveis := self.habilidades_disponiveis(habilidades_json)): # := cria var e usa na comparação na msm linha
+            raise ManaInsuficienteError(f"{self.nome} não tem mana para usar nenhuma habilidade!")
 
-        id_habilidade = rm.choice(habilidades_disponiveis)
-        habilidade = habilidades_json[id_habilidade]
+        habilidade_req = rm.choice(habilidades_disponiveis)
+        habilidade = habilidades_json[habilidade_req]
 
         print(f"{self.nome} usou a habilidade {habilidade['nome']}!")
 
@@ -77,16 +74,13 @@ class Inimigo:
 
         if "dano" in habilidade["tipos"]:
             alvo.tomou_dano(
-                habilidade["potencia"],
+                dano=habilidade["potencia"],
                 penetracao_defesa=habilidade.get("penetracao_defesa", 0),
                 ignorar_defesa=habilidade.get("ignorar_defesa", False)
                 )
 
         if "cura" in habilidade["tipos"]:
-            self.vida = min(
-                self.vida_maxima,
-                self.vida + habilidade["cura"]
-                )
+            self.vida = min(self.vida_maxima, self.vida + habilidade["cura"])
 
         if "efeito" in habilidade["tipos"]:
             alvo.tomou_efeito(habilidade["efeitos"])

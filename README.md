@@ -1,0 +1,1 @@
+Jogo simples de RPG de turno, feito usando python, json, sqlite e a lib pygame para o visual
