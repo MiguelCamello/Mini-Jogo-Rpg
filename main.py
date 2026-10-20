@@ -1,15 +1,32 @@
-from utils.criar_inimigos import criar_inimigo
-from utils.carregar_json import carregar_json
-from model.player import Player
+from utils.criar_classe import criar_inimigo, criar_player
+import os
+
 
 goblin = criar_inimigo("goblin")
 lobo = criar_inimigo("lobo")
 
-habilidades_json = (dados := carregar_json(habilidades=True)["habilidades"])
+player_1 = criar_player("Miguel", defesa= 0)
 
-goblin.info(habilidades_json)
-lobo.info(habilidades_json)
+# lobo.info(habilidades_json)
 
-player_1 = Player(nome="Miguel", hab_json=habilidades_json)
+# goblin.usar_habilidade(player_1)
+# goblin.info()
 
-player_1.info(habilidades_json)
+
+# player_1.ganhar_item("poção de cura")
+# player_1.ganhar_item("poção de cura")
+# player_1.ganhar_item("poção de dano")
+
+# player_1.ganhar_habilidade("soco_forte")
+# player_1.usar_habilidade(habilidade_req="soco_forte", alvo=goblin)
+
+# player_1.info()
+
+#teste de exp
+# while True: 
+#     os.system("cls")
+#     player_1.info()
+
+#     exp = int(input("> "))
+
+#     player_1.ganho_exp(exp)
