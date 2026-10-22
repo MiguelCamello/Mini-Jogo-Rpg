@@ -6,7 +6,6 @@
     ],
     "raridade": "comum",
     "potencia": 5,
-    "efeitos": [],
     "custo_mana": 0,
     "descricao": "Um soco tao fraco que nem cansa o usuario."
   },
@@ -17,7 +16,6 @@
     ],
     "raridade": "comum",
     "potencia": 15,
-    "efeitos": [],
     "custo_mana": 5,
     "descricao": "Um soco de potencia media."
   },
@@ -28,7 +26,6 @@
     ],
     "raridade": "comum",
     "potencia": 35,
-    "efeitos": [],
     "custo_mana": 15,
     "descricao": "Um soco forte convencional."
   },
@@ -39,7 +36,6 @@
     ],
     "raridade": "comum",
     "cura": 15,
-    "efeitos": [],
     "custo_mana": 10,
     "descricao": "Uma magia simples de cura."
   },
@@ -50,7 +46,6 @@
     ],
     "raridade": "comum",
     "cura": 30,
-    "efeitos": [],
     "custo_mana": 15,
     "descricao": "Uma magia de cura intermediaria."
   },
@@ -61,7 +56,6 @@
     ],
     "raridade": "comum",
     "cura": 50,
-    "efeitos": [],
     "custo_mana": 25,
     "descricao": "Uma magia poderosa que restaura uma grande quantidade de vida."
   },
@@ -88,7 +82,6 @@
     "raridade": "epico",
     "potencia": 45,
     "cura": 20,
-    "efeitos": [],
     "custo_mana": 25,
     "descricao": "Um golpe vampirico que causa dano e restaura vida do usuario."
   },
@@ -99,7 +92,6 @@
     ],
     "raridade": "comum",
     "potencia": 15,
-    "efeitos": [],
     "custo_mana": 0,
     "descricao": "Uma mordida que causa dano ao alvo."
   },
@@ -110,7 +102,6 @@
     ],
     "raridade": "comum",
     "potencia": 12,
-    "efeitos": [],
     "custo_mana": 0,
     "descricao": "Um ataque veloz que causa dano ao alvo."
   },
@@ -134,7 +125,6 @@
     ],
     "raridade": "raro",
     "potencia": 45,
-    "efeitos": [],
     "custo_mana": 20,
     "descricao": "Um golpe poderoso que causa muito dano."
   },
@@ -147,7 +137,6 @@
     "raridade": "raro",
     "potencia": 25,
     "cura": 15,
-    "efeitos": [],
     "custo_mana": 20,
     "descricao": "Causa dano ao alvo e recupera vida do usuario."
   },
@@ -172,7 +161,6 @@
     ],
     "raridade": "comum",
     "potencia": 28,
-    "efeitos": [],
     "custo_mana": 5,
     "descricao": "Um ataque direto e preciso com uma arma pontiaguda."
   },
@@ -183,7 +171,6 @@
     ],
     "raridade": "raro",
     "potencia": 40,
-    "efeitos": [],
     "custo_mana": 25,
     "descricao": "Uma esfera de energia sombria que atinge o alvo."
   },
@@ -194,7 +181,6 @@
     ],
     "raridade": "comum",
     "potencia": 20,
-    "efeitos": [],
     "custo_mana": 0,
     "descricao": "Arremessa uma pedra contra o alvo."
   },
@@ -234,7 +220,6 @@
     "raridade": "comum",
     "potencia": 30,
     "penetracao_defesa": 25,
-    "efeitos": [],
     "custo_mana": 10,
     "descricao": "Uma estocada precisa que ignora 25% da defesa do alvo."
   },
@@ -246,7 +231,6 @@
     "raridade": "comum",
     "potencia": 40,
     "penetracao_defesa": 30,
-    "efeitos": [],
     "custo_mana": 15,
     "descricao": "Um corte profundo que atravessa parte da defesa do alvo."
   },
@@ -258,7 +242,6 @@
     "raridade": "comum",
     "potencia": 35,
     "penetracao_defesa": 40,
-    "efeitos": [],
     "custo_mana": 10,
     "descricao": "Uma flecha veloz que ignora 40% da defesa do alvo."
   },
@@ -270,7 +253,6 @@
     "raridade": "raro",
     "potencia": 50,
     "penetracao_defesa": 50,
-    "efeitos": [],
     "custo_mana": 25,
     "descricao": "Um golpe pesado que atravessa metade da defesa do alvo."
   },
@@ -311,7 +293,6 @@
     "raridade": "raro",
     "potencia": 45,
     "ignorar_defesa": true,
-    "efeitos": [],
     "custo_mana": 30,
     "descricao": "Um golpe concentrado que ignora completamente a defesa do alvo."
   },
@@ -323,7 +304,6 @@
     "raridade": "raro",
     "potencia": 40,
     "ignorar_defesa": true,
-    "efeitos": [],
     "custo_mana": 25,
     "descricao": "Uma lâmina espectral que atravessa armaduras e proteções."
   },
@@ -335,7 +315,6 @@
     "raridade": "epico",
     "potencia": 75,
     "ignorar_defesa": true,
-    "efeitos": [],
     "custo_mana": 45,
     "descricao": "Um ataque sombrio devastador que ignora toda a defesa do alvo."
   },
@@ -347,7 +326,6 @@
     "raridade": "epico",
     "potencia": 60,
     "ignorar_defesa": true,
-    "efeitos": [],
     "custo_mana": 40,
     "descricao": "Um raio mágico que atravessa as proteções físicas do alvo."
   },
@@ -374,7 +352,6 @@
     "raridade": "lendario",
     "potencia": 130,
     "ignorar_defesa": true,
-    "efeitos": [],
     "custo_mana": 90,
     "descricao": "Um ataque extremo que ignora completamente a defesa do alvo."
   },
@@ -388,7 +365,6 @@
     "potencia": 30,
     "defesa": 15,
     "penetracao_defesa": 35,
-    "efeitos": [],
     "custo_mana": 25,
     "descricao": "Ataca ignorando parte da defesa do alvo e concede defesa ao usuario."
   },
@@ -402,7 +378,6 @@
     "potencia": 45,
     "cura": 25,
     "ignorar_defesa": true,
-    "efeitos": [],
     "custo_mana": 40,
     "descricao": "Causa dano que ignora a defesa e restaura vida do usuario."
   },
@@ -415,7 +390,6 @@
     "raridade": "raro",
     "defesa": 35,
     "cura": 20,
-    "efeitos": [],
     "custo_mana": 30,
     "descricao": "Cria uma proteção mágica e restaura parte da vida do usuario."
   },

@@ -1,4 +1,4 @@
-from utils.sorteio import sortear_quantidade
+from utils.sorteio import sortear_quantidade, sortear_drops
 from utils.erros import ManaInsuficienteError
 import random as rm
 
@@ -30,12 +30,20 @@ class Inimigo:
             self.mana + 20
         )
 
-    def morto(self, quem_matou):
-        self.status = ["morto"]
-        quem_matou.ganhou_exp(self.exp_drop)
-        #drops de itens, dps eu faço
+    def morto(self, atacante):
+        print(f"{self.nome} foi morto por {atacante.nome}!")
 
-    def tomou_dano(self, habilidade_tomada):
+        self.status = ["morto"]
+        atacante.ganhou_exp(self.exp_drop)
+        print(f"{atacante.nome} ganhou {self.exp_drop} de exp!")
+
+        for item, chance in self.drops.items():
+            if sortear_drops(chance):
+                atacante.ganhou_item(item)
+                print(f"{atacante.nome} ganhou {item}!")
+
+
+    def tomou_dano(self, habilidade_tomada, atacante):
         dano = habilidade_tomada["potencia"]
         penetracao_defesa = habilidade_tomada.get("penetracao_defesa", 0)
         ignorar_defesa = habilidade_tomada.get("ignorar_defesa", False)
@@ -50,7 +58,7 @@ class Inimigo:
         dano_final = max(0, dano - defesa_aplicada)
         self.vida = round(max(0, self.vida - dano_final))
         if self.vida == 0 and "morto" not in self.status:
-            self.morto()
+            self.morto(atacante)
 
     def tomou_efeito(self, efeitos):
         for efeito in efeitos:
@@ -74,7 +82,7 @@ class Inimigo:
         self.mana -= habilidade["custo_mana"]
 
         if "dano" in habilidade["tipos"]:
-            alvo.tomou_dano(habilidade)
+            alvo.tomou_dano(habilidade, self)
 
         if "cura" in habilidade["tipos"]:
             self.vida = min(self.vida_maxima, self.vida + habilidade["cura"])

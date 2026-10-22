@@ -34,11 +34,13 @@ class Player:
             hab for hab, dados in habilidades_json.items() if dados["raridade"] == "comum"]
         self.habilidades = rm.sample(habilidades_possiveis, 3)
 
-    def morrer(self):
+    def morrer(self, atacante):
         self.status = ["morto"]
+
+        print(f"Você morreu para um {atacante}")
         # vou fazer penalidade
 
-    def tomou_dano(self, habilidade_tomada):
+    def tomou_dano(self, habilidade_tomada, atacante):
         dano = habilidade_tomada["potencia"]
         penetracao_defesa = habilidade_tomada.get("penetracao_defesa", 0)
         ignorar_defesa = habilidade_tomada.get("ignorar_defesa", False)
@@ -53,7 +55,7 @@ class Player:
         dano_final = max(0, dano - defesa_aplicada)
         self.vida = round(max(0, self.vida - dano_final))
         if self.vida == 0:
-            self.morto()
+            self.morto(atacante)
 
     def tomou_efeito(self, efeitos):
         for efeito in efeitos:
@@ -62,7 +64,7 @@ class Player:
                 continue
             self.status.append(efeito)
 
-    def ganho_exp(self, exp):
+    def ganhou_exp(self, exp):
         if exp <= 0:
             return print("Esse valor de exp é invalido!")
         self.exp += exp
@@ -78,13 +80,13 @@ class Player:
         self.vida_maxima = 100+(self.nivel*2)
         self.defesa = round(10+(self.nivel*1.5))
 
-    def ganhar_item(self, item):
+    def ganhou_item(self, item):
         if item not in self.inventario:
             self.inventario[item] = 1
             return
         self.inventario[item] += 1
 
-    def ganhar_habilidade(self, habilidade_adquirida):
+    def ganhou_habilidade(self, habilidade_adquirida):
         if habilidade_adquirida not in self.habilidades_json:
             raise HabilidadeInexistenteError("Está habilidade não existe!")
         if habilidade_adquirida in self.habilidades:
@@ -99,7 +101,7 @@ class Player:
         habilidade = self.habilidades_json[habilidade_req]
 
         if "dano" in habilidade["tipos"]:
-            alvo.tomou_dano(habilidade)
+            alvo.tomou_dano(habilidade, self)
 
         if "cura" in habilidade["tipos"]:
             self.vida = min(self.vida_maxima, self.vida + habilidade["cura"])
@@ -127,8 +129,8 @@ class Player:
             raise ManaInsuficienteError(
                 "Você não possui mana suficiente para está habilidade!")
 
-        self.aplicar_habilidade(alvo, habilidade_req)
         print(f"{self.nome} usou a habilidade {habilidade_req}")
+        self.aplicar_habilidade(alvo, habilidade_req)
 
     def info(self):
         linha = "+" + "-" * 46 + "+"

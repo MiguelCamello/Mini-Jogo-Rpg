@@ -10,3 +10,6 @@ def sortear_quantidade(quantidade_max):
         weights=pesos,
         k=1 #retorna 1 sorteio só
     )[0] #retorna o index 0
+
+def sortear_drops(chance):
+    return rm.random() * 100 < chance
