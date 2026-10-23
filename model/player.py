@@ -133,7 +133,7 @@ class Player:
         self.aplicar_habilidade(alvo, habilidade_req)
 
     def info(self):
-        linha = "+" + "-" * 46 + "+"
+        linha = "+"+"-"*46+"+"
 
         habilidades = "\n".join(
             f"| - {self.habilidades_json[hab]['nome']:<30} "

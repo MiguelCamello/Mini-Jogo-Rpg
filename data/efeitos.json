@@ -2,66 +2,57 @@
   "vivo": {
     "nome": "Vivo",
     "tipo": "estado",
-    "descricao": "A entidade esta viva.",
-    "efeitos": []
+    "descricao": "A entidade esta viva."
   },
   "morto": {
     "nome": "Morto",
     "tipo": "estado",
-    "descricao": "A entidade morreu e nao pode agir.",
-    "efeitos": []
+    "descricao": "A entidade morreu e nao pode agir."
   },
   "morto_vivo": {
     "nome": "Morto-vivo",
     "tipo": "estado",
-    "descricao": "A entidade pertence a categoria dos mortos-vivos.",
-    "efeitos": []
+    "descricao": "A entidade pertence a categoria dos mortos-vivos."
   },
   "atordoado": {
     "nome": "Atordoado",
     "tipo": "controle",
-    "descricao": "A entidade perde sua proxima acao.",
     "duracao_turnos": 1,
-    "efeitos": []
+    "descricao": "A entidade perde sua proxima acao."
   },
   "envenenado": {
     "nome": "Envenenado",
     "tipo": "dano_continuo",
-    "descricao": "A entidade perde vida ao longo dos turnos.",
     "duracao_turnos": 3,
     "dano_por_turno": 5,
-    "efeitos": []
+    "descricao": "A entidade perde vida ao longo dos turnos."
   },
   "queimando": {
     "nome": "Queimando",
     "tipo": "dano_continuo",
-    "descricao": "A entidade sofre dano de fogo ao longo dos turnos.",
     "duracao_turnos": 3,
     "dano_por_turno": 8,
-    "efeitos": []
+    "descricao": "A entidade sofre dano de fogo ao longo dos turnos."
   },
   "regeneracao": {
     "nome": "Regeneracao",
     "tipo": "cura_continua",
-    "descricao": "A entidade recupera vida ao longo dos turnos.",
     "duracao_turnos": 3,
     "cura_por_turno": 5,
-    "efeitos": []
+    "descricao": "A entidade recupera vida ao longo dos turnos."
   },
   "enfraquecido": {
     "nome": "Enfraquecido",
     "tipo": "debilitacao",
-    "descricao": "A entidade causa menos dano.",
     "duracao_turnos": 2,
-    "modificador_dano": -0.25,
-    "efeitos": []
+    "modificador_dano": -25,
+    "descricao": "A entidade causa menos dano."
   },
   "fortalecido": {
     "nome": "Fortalecido",
     "tipo": "beneficio",
-    "descricao": "A entidade causa mais dano.",
     "duracao_turnos": 3,
-    "modificador_dano": 0.25,
-    "efeitos": []
+    "modificador_dano": 25,
+    "descricao": "A entidade causa mais dano."
   }
 }
