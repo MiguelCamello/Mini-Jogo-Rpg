@@ -1,7 +1,7 @@
 {
     "goblin": {
         "nome": "Goblin",
-        "status": [
+        "estados": [
             "vivo"
         ],
         "mana": 100,
@@ -19,7 +19,7 @@
     },
     "esqueleto": {
         "nome": "Esqueleto",
-        "status": [
+        "estados": [
             "morto-vivo"
         ],
         "mana": 85,
@@ -37,7 +37,7 @@
     },
     "lobo": {
         "nome": "Lobo",
-        "status": [
+        "estados": [
             "vivo"
         ],
         "mana": 90,
@@ -56,7 +56,7 @@
     },
     "orc": {
         "nome": "Orc",
-        "status": [
+        "estados": [
             "vivo"
         ],
         "mana": 120,
@@ -75,7 +75,7 @@
     },
     "morcego_gigante": {
         "nome": "Morcego gigante",
-        "status": [
+        "estados": [
             "vivo"
         ],
         "mana": 70,
@@ -94,7 +94,7 @@
     },
     "zumbi": {
         "nome": "Zumbi",
-        "status": [
+        "estados": [
             "morto-vivo"
         ],
         "mana": 60,
@@ -113,7 +113,7 @@
     },
     "cavaleiro_esqueleto": {
         "nome": "Cavaleiro esqueleto",
-        "status": [
+        "estados": [
             "morto-vivo"
         ],
         "mana": 110,
@@ -133,7 +133,7 @@
     },
     "mago_sombrio": {
         "nome": "Mago sombrio",
-        "status": [
+        "estados": [
             "vivo"
         ],
         "mana": 150,
@@ -152,7 +152,7 @@
     },
     "golem_de_pedra": {
         "nome": "Golem de pedra",
-        "status": [
+        "estados": [
             "vivo"
         ],
         "mana": 100,
@@ -171,7 +171,7 @@
     },
     "vampiro": {
         "nome": "Vampiro",
-        "status": [
+        "estados": [
             "morto-vivo"
         ],
         "mana": 140,
@@ -191,7 +191,7 @@
     },
     "dragao_jovem": {
         "nome": "Dragao jovem",
-        "status": [
+        "estados": [
             "vivo"
         ],
         "mana": 180,

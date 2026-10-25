@@ -1,9 +1,9 @@
 from database.conexao import conectar
+from contextlib import closing
 
 def criar_tabela_player():
-    with conectar() as conn:
-        cursor = conn.cursor()
-        cursor.execute("""
+    with closing(conectar()) as conn:
+        conn.execute("""
 CREATE TABLE IF NOT EXISTS players(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT NOT NULL,

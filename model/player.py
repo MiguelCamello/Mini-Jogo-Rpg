@@ -6,7 +6,7 @@ class Player:
     def __init__(self,
                  habilidades_json,
                  nome,
-                 status=["Vivo"],
+                 estados=["Vivo"],
                  nivel=1,
                  exp_necessario=200,
                  exp=0,
@@ -19,7 +19,7 @@ class Player:
                  ):
         self.habilidades_json = habilidades_json
         self.nome = nome
-        self.status = status
+        self.estados = estados
         self.nivel = nivel
         self.exp_necessario = exp_necessario
         self.exp = exp
@@ -35,7 +35,7 @@ class Player:
         self.habilidades = rm.sample(habilidades_possiveis, 3)
 
     def morrer(self, atacante):
-        self.status = ["morto"]
+        self.estados = ["morto"]
 
         print(f"Você morreu para um {atacante}")
         # vou fazer penalidade
@@ -59,10 +59,10 @@ class Player:
 
     def tomou_efeito(self, efeitos):
         for efeito in efeitos:
-            if efeito in self.status:
+            if efeito in self.estados:
                 print(f"O {self.nome} já possui o efeito {efeito}!")
                 continue
-            self.status.append(efeito)
+            self.estados.append(efeito)
 
     def ganhou_exp(self, exp):
         if exp <= 0:
@@ -152,7 +152,7 @@ class Player:
 {linha}
 | Nome: {self.nome:<39}|
 | Nivel: {self.nivel:<38}|
-| Status: {', '.join(self.status):<37}|
+| Estados: {', '.join(self.estados):<37}|
 {linha}
 |{"ATRIBUTOS":<46}|
 | Vida: {str(self.vida_maxima)+"/"+str(self.vida):<39}|

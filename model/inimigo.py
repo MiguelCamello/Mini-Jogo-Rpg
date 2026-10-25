@@ -6,7 +6,7 @@ class Inimigo:
     def __init__(self, inimigo_json, habilidades_json):
         self.habilidades_json = habilidades_json
         self.nome = inimigo_json["nome"]
-        self.status = inimigo_json["status"]
+        self.estados = inimigo_json["estados"]
         self.mana_maxima = inimigo_json["mana"]
         self.mana = inimigo_json["mana"]
         self.vida_maxima = inimigo_json["vida"]
@@ -33,7 +33,7 @@ class Inimigo:
     def morto(self, atacante):
         print(f"{self.nome} foi morto por {atacante.nome}!")
 
-        self.status = ["morto"]
+        self.estados = ["morto"]
         atacante.ganhou_exp(self.exp_drop)
         print(f"{atacante.nome} ganhou {self.exp_drop} de exp!")
 
@@ -57,15 +57,15 @@ class Inimigo:
 
         dano_final = max(0, dano - defesa_aplicada)
         self.vida = round(max(0, self.vida - dano_final))
-        if self.vida == 0 and "morto" not in self.status:
+        if self.vida == 0 and "morto" not in self.estados:
             self.morto(atacante)
 
     def tomou_efeito(self, efeitos):
         for efeito in efeitos:
-            if efeito in self.status:
+            if efeito in self.estados:
                 print(f"O {self.nome} já possui o efeito {efeito}!")
                 continue
-            self.status.append(efeito)
+            self.estados.append(efeito)
 
     def habilidades_disponiveis(self):
         return [hab for hab in self.habilidades if self.habilidades_json[hab]["custo_mana"] <= self.mana]
@@ -110,7 +110,7 @@ class Inimigo:
 |{"FICHA DO INIMIGO":^46}|
 {linha}
 | Nome: {self.nome:<39}|
-| Status: {', '.join(self.status):<37}|
+| Estados: {', '.join(self.estados):<37}|
 {linha}
 |{"ATRIBUTOS":<46}|
 | Vida: {str(self.vida_maxima)+"/"+str(self.vida):<39}|
