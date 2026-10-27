@@ -4,11 +4,11 @@ from contextlib import closing
 def criar_tabela_itens():
     with closing(conectar()) as conn:
         conn.execute("""
-CREATE TABLE IF NOT EXISTS itens(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome TEXT NOT NULL
-)
-""")
+        CREATE TABLE IF NOT EXISTS itens(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nome TEXT NOT NULL
+            )
+        """)
 
 def get_itens():
     with closing(conectar()) as conn:

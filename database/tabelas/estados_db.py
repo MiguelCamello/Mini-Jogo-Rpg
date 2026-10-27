@@ -4,11 +4,11 @@ from contextlib import closing
 def criar_tabela_estados():
     with closing(conectar()) as conn:
         conn.execute("""
-CREATE TABLE IF NOT EXISTS estados (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome TEXT NOT NULL,
-)
-""")
+        CREATE TABLE IF NOT EXISTS estados (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nome TEXT NOT NULL
+            )
+        """)
 
 def get_estados():
     with closing(conectar()) as conn:

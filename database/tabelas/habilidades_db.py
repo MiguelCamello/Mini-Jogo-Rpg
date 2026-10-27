@@ -4,11 +4,11 @@ from contextlib import closing
 def criar_tabela_habilidades():
     with closing(conectar()) as conn:
         conn.execute("""
-CREATE TABLE IF NOT EXISTS habilidades(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome TEXT NOT NULL,
-)
-""")
+        CREATE TABLE IF NOT EXISTS habilidades (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nome TEXT NOT NULL
+            )
+        """)
 
 def get_habilidades():
     with closing(conectar()) as conn:

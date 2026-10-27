@@ -5,16 +5,16 @@ from contextlib import closing
 def criar_tabela_players_estados():
     with closing(conectar()) as conn:
         conn.execute("""
-CREATE TABLE IF NOT EXISTS players_estados (
-    player_id INTEGER NOT NULL,
-    estados_id INTEGER NOT NULL,
+        CREATE TABLE IF NOT EXISTS players_estados (
+            player_id INTEGER NOT NULL,
+            estados_id INTEGER NOT NULL,
 
-    PRIMARY KEY (player_id, estados_id),
+            PRIMARY KEY (player_id, estados_id),
 
-    FOREIGN KEY (player_id) REFERENCES players(id),
-    FOREIGN KEY (estados_id) REFERENCES estados(id)
-)
-""")
+            FOREIGN KEY (player_id) REFERENCES players(id),
+            FOREIGN KEY (estados_id) REFERENCES estados(id)
+            )
+        """)
 
 
 def get_players_estados():

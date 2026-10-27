@@ -152,7 +152,7 @@ class Player:
 {linha}
 | Nome: {self.nome:<39}|
 | Nivel: {self.nivel:<38}|
-| Estados: {', '.join(self.estados):<37}|
+| Estados: {', '.join(self.estados):<36}|
 {linha}
 |{"ATRIBUTOS":<46}|
 | Vida: {str(self.vida_maxima)+"/"+str(self.vida):<39}|
