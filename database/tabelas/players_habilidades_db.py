@@ -1,8 +1,8 @@
-from database.conexao import conectar
-from contextlib import closing
+from database.conexao import usar_conexao
 
-def criar_tabela_players_habilidades():
-    with closing(conectar()) as conn:
+
+def criar_tabela_players_habilidades(conn=None):
+    with usar_conexao(conn) as conn:
         conn.execute("""
 CREATE TABLE IF NOT EXISTS players_habilidades(
     player_id INTEGER NOT NULL,
@@ -15,33 +15,34 @@ CREATE TABLE IF NOT EXISTS players_habilidades(
 )
 """)
 
-def get_players_habilidades():
-    with closing(conectar()) as conn:
+
+def get_players_habilidades(conn=None):
+    with usar_conexao(conn) as conn:
         return conn.execute("SELECT * FROM players_habilidades").fetchall()
 
-def post_player_habilidade(player_id, habilidade_id):
-    with closing(conectar()) as conn:
-        with conn:
-            conn.execute("""
-                INSERT INTO players_habilidades (player_id, habilidade_id) 
-                VALUES (?,?)
-            """,(player_id, habilidade_id))
 
-def get_player_habilidade(player_id, habilidade_id):
-    with closing(conectar()) as conn:
+def get_player_habilidade(player_id, habilidade_id, conn=None):
+    with usar_conexao(conn) as conn:
         return conn.execute("""
             SELECT * FROM players_habilidades 
             WHERE player_id = ? 
             AND habilidade_id = ?
-        """,(player_id, habilidade_id)).fetchone()
+        """, (player_id, habilidade_id)).fetchone()
+
+
+def post_player_habilidade(player_id, habilidade_id, conn=None):
+    with usar_conexao(conn) as conn:
+        conn.execute("""
+            INSERT INTO players_habilidades (player_id, habilidade_id) 
+            VALUES (?,?)
+        """, (player_id, habilidade_id))
 
 # update desnecessario
 
-def delete_player_habilidade(player_id, habilidade_id):
-    with closing(conectar()) as conn:
-        with conn:
-            conn.execute("""
-                DELETE FROM players_habilidades 
-                WHERE player_id = ? 
-                AND habilidade_id = ?
-            """,(player_id, habilidade_id))
+def delete_player_habilidade(player_id, habilidade_id, conn=None):
+    with usar_conexao(conn) as conn:
+        conn.execute("""
+            DELETE FROM players_habilidades 
+            WHERE player_id = ? 
+            AND habilidade_id = ?
+        """, (player_id, habilidade_id))

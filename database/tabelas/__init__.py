@@ -1,0 +1,7 @@
+from .players_db import criar_tabela_players
+from .players_habilidades_db import criar_tabela_players_habilidades
+from .players_estados_db import criar_tabela_players_estados
+from .players_itens_db import criar_tabela_players_itens
+from .habilidades_db import criar_tabela_habilidades
+from .estados_db import criar_tabela_estados
+from .itens_db import criar_tabela_itens

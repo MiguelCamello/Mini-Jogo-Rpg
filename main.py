@@ -1,5 +1,6 @@
 from sistemas.criar_classe import criar_inimigo, criar_player
 from sistemas.busca import buscar_objeto
+from database.saves import salvar_player
 import time
 import os
 
@@ -41,7 +42,7 @@ while True:
         os.system("cls")
         player_1.info()
 
-        print("exp, item, habilidade, info")
+        print("exp, item, habilidade, info, salvar")
         print(" oque quer fazer?")
         opcao = input("> ")
 
@@ -80,6 +81,10 @@ while True:
             os.system("cls")
             alvo_obj.info()
             input("continuar> ")
+
+        elif opcao == "salvar":
+            salvar_player(player_1)
     except:
         print()
         time.sleep(1)
+
