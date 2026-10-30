@@ -19,17 +19,17 @@ CREATE TABLE IF NOT EXISTS players(
 """)
 
 
-def get_players(conn=None):
+def get_all(conn=None):
     with usar_conexao(conn) as conn:
         return conn.execute("SELECT * FROM players").fetchall()
 
 
-def get_player(id, conn=None):
+def get(id, conn=None):
     with usar_conexao(conn) as conn:
         return conn.execute("SELECT * FROM players WHERE id = ?", (id,)).fetchone()
 
 
-def post_player(nome, nivel, exp_n, exp, mana_m, mana, vida_m, vida, defesa, conn=None):
+def create(nome, nivel, exp_n, exp, mana_m, mana, vida_m, vida, defesa, conn=None):
     with usar_conexao(conn) as conn:
         cursor = conn.execute("""
             INSERT INTO players (
@@ -48,7 +48,7 @@ def post_player(nome, nivel, exp_n, exp, mana_m, mana, vida_m, vida, defesa, con
         return cursor.lastrowid
 
 
-def update_player(id, nome, nivel, exp_n, exp, mana_m, mana, vida_m, vida, defesa, conn=None):
+def update(id, nome, nivel, exp_n, exp, mana_m, mana, vida_m, vida, defesa, conn=None):
     with usar_conexao(conn) as conn:
         conn.execute("""
             UPDATE players
@@ -58,6 +58,6 @@ def update_player(id, nome, nivel, exp_n, exp, mana_m, mana, vida_m, vida, defes
         """, (nome, nivel, exp_n, exp, mana_m, mana, vida_m, vida, defesa, id))
 
 
-def delete_player(id, conn=None):
+def delete(id, conn=None):
     with usar_conexao(conn) as conn:
         conn.execute("DELETE FROM players WHERE id = ?", (id,))

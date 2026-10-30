@@ -10,27 +10,28 @@ def criar_tabela_players_estados(conn=None):
 
             PRIMARY KEY (player_id, estado_id),
 
-            FOREIGN KEY (player_id) REFERENCES players(id),
+            FOREIGN KEY (player_id) REFERENCES players(id)
+                ON DELETE CASCADE,
+                
             FOREIGN KEY (estado_id) REFERENCES estados(id)
             )
         """)
 
 
-def get_players_estados(conn=None):
+def get_all(conn=None):
     with usar_conexao(conn) as conn:
         return conn.execute("SELECT * FROM players_estados").fetchall()
 
 
-def get_player_estado(player_id, estado_id, conn=None):
+def find_by_playerId(player_id, conn=None):
     with usar_conexao(conn) as conn:
         return conn.execute("""
             SELECT * FROM players_estados 
-            WHERE player_id = ? 
-            AND estado_id = ?
-        """, (player_id, estado_id)).fetchone()
+            WHERE player_id = ?
+        """, (player_id,)).fetchall()
 
 
-def post_player_estado(player_id, estado_id, conn=None):
+def create(player_id, estado_id, conn=None):
     with usar_conexao(conn) as conn:
         conn.execute("""
             INSERT INTO players_estados (player_id, estado_id) 
@@ -40,10 +41,9 @@ def post_player_estado(player_id, estado_id, conn=None):
 # update desnecessario
 
 
-def delete_player_estado(player_id, estado_id, conn=None):
+def delete_by_playerId(player_id, conn=None):
     with usar_conexao(conn) as conn:
         conn.execute("""
             DELETE FROM players_estados 
             WHERE player_id = ? 
-            AND estado_id = ?
-        """, (player_id, estado_id))
+        """, (player_id,))

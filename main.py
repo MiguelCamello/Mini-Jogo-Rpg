@@ -1,9 +1,11 @@
+from database.criar_todas_tabelas import criar_todas_tabelas
 from sistemas.criar_classe import criar_inimigo, criar_player
 from sistemas.busca import buscar_objeto
 from database.saves import salvar_player
 import time
 import os
 
+criar_todas_tabelas()
 
 goblin = criar_inimigo("goblin")
 lobo = criar_inimigo("lobo")
@@ -12,31 +14,6 @@ inimigos_list = [goblin, lobo]
 
 player_1 = criar_player("Miguel")
 
-# lobo.info(habilidades_json)
-
-# goblin.usar_habilidade(player_1)
-# goblin.info()
-
-
-# player_1.ganhou_item("poção de cura")
-# player_1.ganhou_item("poção de cura")
-# player_1.ganhou_item("poção de dano")
-
-# player_1.ganhou_habilidade("soco_forte")
-# player_1.usar_habilidade(habilidade_req="soco_forte", alvo=goblin)
-
-# player_1.info()
-
-#teste de exp
-# while True: 
-#     os.system("cls")
-#     player_1.info()
-
-#     exp = int(input("> "))
-
-#     player_1.ganho_exp(exp)
-
-#teste geral
 while True: 
     try:
         os.system("cls")
@@ -84,6 +61,8 @@ while True:
 
         elif opcao == "salvar":
             salvar_player(player_1)
+            time.sleep(1)
+            
     except:
         print()
         time.sleep(1)

@@ -15,7 +15,8 @@ class Player:
                  vida_maxima=100,
                  vida=100,
                  defesa=10,
-                 itens={}
+                 itens={},
+                 habilidades=None
                  ):
         self.habilidades_json = habilidades_json
         self.nome = nome
@@ -30,9 +31,12 @@ class Player:
         self.defesa = defesa
         self.inventario = itens
 
-        habilidades_possiveis = [
-            hab for hab, dados in habilidades_json.items() if dados["raridade"] == "comum"]
-        self.habilidades = rm.sample(habilidades_possiveis, 3)
+        if habilidades is None:
+            habilidades_possiveis = [
+                hab for hab, dados in habilidades_json.items() if dados["raridade"] == "comum"]
+            self.habilidades = rm.sample(habilidades_possiveis, 3)
+        else:
+            self.habilidades = habilidades
 
     def morrer(self, atacante):
         self.estados = ["morto"]
@@ -80,11 +84,11 @@ class Player:
         self.vida_maxima = 100+(self.nivel*2)
         self.defesa = round(10+(self.nivel*1.5))
 
-    def ganhou_item(self, item):
+    def ganhou_item(self, item, quantia=1):
         if item not in self.inventario:
-            self.inventario[item] = 1
+            self.inventario[item] = quantia
             return
-        self.inventario[item] += 1
+        self.inventario[item] += quantia
 
     def ganhou_habilidade(self, habilidade_adquirida):
         if habilidade_adquirida not in self.habilidades_json:
