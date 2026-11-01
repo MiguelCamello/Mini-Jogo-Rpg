@@ -1,10 +1,12 @@
 from utils.sorteio import sortear_quantidade, sortear_drops
-from utils.erros import ManaInsuficienteError
+from utils.erros import ManaInsuficienteError, SpriteInexistenteError
 import random as rm
 
 class Inimigo:
-    def __init__(self, inimigo_json, habilidades_json):
+    def __init__(self, inimigo_json, habilidades_json, sprites_json):
         self.habilidades_json = habilidades_json
+        self.sprites_json = sprites_json
+        self.sprite = inimigo_json["sprite"]
         self.nome = inimigo_json["nome"]
         self.estados = inimigo_json["estados"]
         self.mana_maxima = inimigo_json["mana"]
@@ -90,6 +92,11 @@ class Inimigo:
         if "efeito" in habilidade["tipos"]:
             alvo.tomou_efeito(habilidade["efeitos"])
 
+    def sprite_dict(self):
+        if self.sprite not in self.sprites_json:
+            raise SpriteInexistenteError
+        return self.sprites_json[self.sprite]
+        
     def info(self):
             
         linha = "+" + "-" * 46 + "+"
@@ -113,8 +120,8 @@ class Inimigo:
 | Estados: {', '.join(self.estados):<37}|
 {linha}
 |{"ATRIBUTOS":<46}|
-| Vida: {str(self.vida_maxima)+"/"+str(self.vida):<39}|
-| Mana: {str(self.mana_maxima)+"/"+str(self.mana):<39}|
+| Vida: {str(self.vida)+"/"+str(self.vida_maxima):<39}|
+| Mana: {str(self.mana)+"/"+str(self.mana_maxima):<39}|
 | Defesa: {self.defesa:<37}|
 | Experiência: {self.exp_drop:<32}|
 {linha}

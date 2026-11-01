@@ -155,6 +155,9 @@ def deleter_player(player_id):
     # o sql se encarrega de deletar as tabelas m:m
     # usando o ON DELETE CASCADE
 
+def obter_players():
+    return players_db.get_all()
+
 def listar_players():
     linha = "+"+"-"*46+"+"
     players_dados = players_db.get_all()

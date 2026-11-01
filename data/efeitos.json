@@ -15,12 +15,14 @@
     "descricao": "A entidade pertence a categoria dos mortos-vivos."
   },
   "atordoado": {
+    "cor": "\u001b[30m",
     "nome": "Atordoado",
     "tipo": "controle",
     "duracao_turnos": 1,
     "descricao": "A entidade perde sua proxima acao."
   },
   "envenenado": {
+    "cor": "\u001b[34m",
     "nome": "Envenenado",
     "tipo": "dano_continuo",
     "duracao_turnos": 3,
@@ -28,6 +30,7 @@
     "descricao": "A entidade perde vida ao longo dos turnos."
   },
   "queimando": {
+    "cor": "\u001b[33m",
     "nome": "Queimando",
     "tipo": "dano_continuo",
     "duracao_turnos": 3,
@@ -35,6 +38,7 @@
     "descricao": "A entidade sofre dano de fogo ao longo dos turnos."
   },
   "regeneracao": {
+    "cor": "\u001b[92m",
     "nome": "Regeneracao",
     "tipo": "cura_continua",
     "duracao_turnos": 3,
@@ -42,6 +46,7 @@
     "descricao": "A entidade recupera vida ao longo dos turnos."
   },
   "enfraquecido": {
+    "cor": "\u001b[30m",
     "nome": "Enfraquecido",
     "tipo": "debilitacao",
     "duracao_turnos": 2,
@@ -49,6 +54,7 @@
     "descricao": "A entidade causa menos dano."
   },
   "fortalecido": {
+    "cor": "\u001b[33m",
     "nome": "Fortalecido",
     "tipo": "beneficio",
     "duracao_turnos": 3,

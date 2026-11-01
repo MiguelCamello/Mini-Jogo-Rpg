@@ -4,10 +4,11 @@ from model.player import Player
 
 
 def criar_inimigo(nome):
-    dados = carregar_json(inimigo=True, habilidades=True)
+    dados = carregar_json(inimigo=True, habilidades=True, sprites=True)
     return Inimigo(
         inimigo_json=dados["inimigos"][nome],
-        habilidades_json=dados["habilidades"]
+        habilidades_json=dados["habilidades"],
+        sprites_json=dados["sprites"]
         )
 
 def criar_player(nome, **resto):

@@ -7,4 +7,8 @@ class HabilidadeNaoAdquiridaError(Exception):
 class ManaInsuficienteError(Exception):
     pass
 
+class SpriteInexistenteError(Exception):
+    pass
 
+class EfeitoInexistenteError(Exception):
+    pass

@@ -1,0 +1,202 @@
+
+{
+    "goblin": {
+        "sprite": "goblin",
+        "nome": "Goblin",
+        "estados": ["vivo"],
+        "mana": 100,
+        "defesa": 0,
+        "vida": 100,
+        "habilidades_possiveis": [
+            "soco_fraco",
+            "cura_leve"
+        ],
+        "exp_drop": 100,
+        "drops": {
+            "faca": 10,
+            "colar": 10
+        }
+    },
+    "esqueleto": {
+        "sprite": "esqueleto",
+        "nome": "Esqueleto",
+        "estados": ["morto-vivo"],
+        "mana": 85,
+        "defesa": 20,
+        "vida": 80,
+        "habilidades_possiveis": [
+            "flechada",
+            "soco_médio"
+        ],
+        "exp_drop": 120,
+        "drops": {
+            "osso": 50,
+            "capacete_de_ferro": 10
+        }
+    },
+    "lobo": {
+        "sprite": "cachorro",
+        "nome": "Lobo",
+        "estados": ["vivo"],
+        "mana": 90,
+        "defesa": 5,
+        "vida": 75,
+        "habilidades_possiveis": [
+            "mordida",
+            "ataque_rapido",
+            "uivo"
+        ],
+        "exp_drop": 80,
+        "drops": {
+            "pele_de_lobo": 40,
+            "presa_de_lobo": 20
+        }
+    },
+    "orc": {
+        "sprite": "fantasma",
+        "nome": "Orc",
+        "estados": ["vivo"],
+        "mana": 120,
+        "defesa": 15,
+        "vida": 150,
+        "habilidades_possiveis": [
+            "soco_forte",
+            "soco_pesado",
+            "golpe_brutal"
+        ],
+        "exp_drop": 180,
+        "drops": {
+            "machado_de_ferro": 15,
+            "carne_de_orc": 50
+        }
+    },
+    "morcego_gigante": {
+        "sprite": "morcego",
+        "nome": "Morcego gigante",
+        "estados": ["vivo"],
+        "mana": 70,
+        "defesa": 0,
+        "vida": 55,
+        "habilidades_possiveis": [
+            "mordida",
+            "ataque_rapido",
+            "drenar_sangue"
+        ],
+        "exp_drop": 65,
+        "drops": {
+            "asa_de_morcego": 35,
+            "presa_de_morcego": 15
+        }
+    },
+    "monstro": {
+        "sprite": "zumbi",
+        "nome": "Monstro",
+        "estados": ["morto-vivo"],
+        "mana": 60,
+        "defesa": 5,
+        "vida": 130,
+        "habilidades_possiveis": [
+            "mordida",
+            "golpe_podre",
+            "golpe_vampirico"
+        ],
+        "exp_drop": 110,
+        "drops": {
+            "carne_podre": 60,
+            "fragmento_osseo": 25
+        }
+    },
+    "cavaleiro_esqueleto": {
+        "sprite": "esqueleto",
+        "nome": "Cavaleiro esqueleto",
+        "estados": ["morto-vivo"],
+        "mana": 110,
+        "defesa": 35,
+        "vida": 120,
+        "habilidades_possiveis": [
+            "corte_raso",
+            "golpe_pesado",
+            "estocada"
+        ],
+        "exp_drop": 220,
+        "drops": {
+            "espada_de_ferro": 20,
+            "capacete_de_ferro": 15,
+            "osso": 70
+        }
+    },
+    "mago_sombrio": {
+        "sprite": "monstro_feliz",
+        "nome": "Mago sombrio",
+        "estados": ["vivo"],
+        "mana": 150,
+        "defesa": 0,
+        "vida": 85,
+        "habilidades_possiveis": [
+            "bola_sombria",
+            "cura_leve",
+            "golpe_vampirico"
+        ],
+        "exp_drop": 250,
+        "drops": {
+            "cajado_sombrio": 10,
+            "cristal_magico": 30
+        }
+    },
+    "golem_de_pedra": {
+        "sprite": "owo",
+        "nome": "Golem de pedra",
+        "estados": ["vivo"],
+        "mana": 100,
+        "defesa": 50,
+        "vida": 250,
+        "habilidades_possiveis": [
+            "soco_pesado",
+            "pedrada",
+            "terremoto"
+        ],
+        "exp_drop": 300,
+        "drops": {
+            "fragmento_de_pedra": 60,
+            "nucleo_de_golem": 10
+        }
+    },
+    "vampiro": {
+        "sprite": "esqueleto",
+        "nome": "Vampiro",
+        "estados": ["morto-vivo"],
+        "mana": 140,
+        "defesa": 15,
+        "vida": 180,
+        "habilidades_possiveis": [
+            "golpe_vampirico",
+            "drenar_sangue",
+            "cura_media"
+        ],
+        "exp_drop": 350,
+        "drops": {
+            "capa_vampirica": 15,
+            "frasco_de_sangue": 40,
+            "anel_sombrio": 5
+        }
+    },
+    "dragao_jovem": {
+        "sprite": "cachorro",
+        "nome": "Dragao jovem",
+        "estados": ["vivo"],
+        "mana": 180,
+        "defesa": 30,
+        "vida": 350,
+        "habilidades_possiveis": [
+            "mordida",
+            "sopro_de_fogo",
+            "golpe_brutal"
+        ],
+        "exp_drop": 600,
+        "drops": {
+            "escama_de_dragao": 50,
+            "presa_de_dragao": 30,
+            "coracao_de_dragao": 5
+        }
+    }
+}

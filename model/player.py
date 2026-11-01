@@ -36,7 +36,7 @@ class Player:
                 hab for hab, dados in habilidades_json.items() if dados["raridade"] == "comum"]
             self.habilidades = rm.sample(habilidades_possiveis, 3)
         else:
-            self.habilidades = habilidades
+            self.habilidades = [hab.captalize() for hab in habilidades]
 
     def morrer(self, atacante):
         self.estados = ["morto"]
@@ -116,11 +116,11 @@ class Player:
         self.mana -= habilidade["custo_mana"]
 
     def usar_habilidade(self, alvo, habilidade_req):
-        if habilidade_req not in self.habilidades_json:
+        if habilidade_req.lower() not in self.habilidades_json:
             raise HabilidadeInexistenteError(
                 f"A habilidade {habilidade_req} não existe no jogo!")
 
-        if habilidade_req not in self.habilidades:
+        if habilidade_req.captalize() not in self.habilidades:
             raise HabilidadeNaoAdquiridaError(
                 f"Você não possui a habilidade {habilidade_req}!")
 
@@ -129,7 +129,7 @@ class Player:
             raise ManaInsuficienteError(
                 "Você não possui mana suficiente para nenhuma habilidade!")
 
-        if habilidade_req not in hab_disp:
+        if habilidade_req.lower() not in hab_disp:
             raise ManaInsuficienteError(
                 "Você não possui mana suficiente para está habilidade!")
 
@@ -159,10 +159,10 @@ class Player:
 | Estados: {', '.join(self.estados):<36}|
 {linha}
 |{"ATRIBUTOS":<46}|
-| Vida: {str(self.vida_maxima)+"/"+str(self.vida):<39}|
-| Mana: {str(self.mana_maxima)+"/"+str(self.mana):<39}|
+| Vida: {str(self.vida)+"/"+str(self.vida_maxima):<39}|
+| Mana: {str(self.mana)+"/"+str(self.mana_maxima):<39}|
 | Defesa: {self.defesa:<37}|
-| Experiência: {str(self.exp_necessario)+"/"+str(self.exp):<32}|
+| Experiência: {str(self.exp)+"/"+str(self.exp_necessario):<32}|
 {linha}
 |{"HABILIDADES":<46}|
 {habilidades}
