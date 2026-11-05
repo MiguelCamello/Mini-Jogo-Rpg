@@ -1,12 +1,11 @@
 from utils.erros import *
 import random as rm
 
-
 class Player:
     def __init__(self,
                  habilidades_json,
                  nome,
-                 estados=["Vivo"],
+                 estados=[],
                  nivel=1,
                  exp_necessario=200,
                  exp=0,
@@ -36,11 +35,14 @@ class Player:
                 hab for hab, dados in habilidades_json.items() if dados["raridade"] == "comum"]
             self.habilidades = rm.sample(habilidades_possiveis, 3)
         else:
-            self.habilidades = [hab.captalize() for hab in habilidades]
+            self.habilidades = [hab.lower() for hab in habilidades]
+
+    @property
+    def vivo(self):
+        return self.vida > 0
 
     def morrer(self, atacante):
-        self.estados = ["morto"]
-
+        self.vivo
         print(f"Você morreu para um {atacante}")
         # vou fazer penalidade
 
@@ -59,14 +61,13 @@ class Player:
         dano_final = max(0, dano - defesa_aplicada)
         self.vida = round(max(0, self.vida - dano_final))
         if self.vida == 0:
-            self.morto(atacante)
+            self.morrer(atacante)
 
-    def tomou_efeito(self, efeitos):
-        for efeito in efeitos:
-            if efeito in self.estados:
-                print(f"O {self.nome} já possui o efeito {efeito}!")
-                continue
-            self.estados.append(efeito)
+    def tomou_efeito(self, efeito):
+        if efeito in self.estados:
+            print(f"O {self.nome} já possui o efeito {efeito}!")
+            return
+        self.estados.append(efeito)
 
     def ganhou_exp(self, exp):
         if exp <= 0:
@@ -83,6 +84,9 @@ class Player:
         self.mana_maxima = 50+(self.nivel*2)
         self.vida_maxima = 100+(self.nivel*2)
         self.defesa = round(10+(self.nivel*1.5))
+        #restaura vida, mana
+        self.vida = self.vida_maxima
+        self.mana = self.mana_maxima
 
     def ganhou_item(self, item, quantia=1):
         if item not in self.inventario:
@@ -91,12 +95,22 @@ class Player:
         self.inventario[item] += quantia
 
     def ganhou_habilidade(self, habilidade_adquirida):
+        habilidade_adquirida = habilidade_adquirida.lower()
+
         if habilidade_adquirida not in self.habilidades_json:
             raise HabilidadeInexistenteError("Está habilidade não existe!")
         if habilidade_adquirida in self.habilidades:
             return print(f"{self.nome} Ganhou uma habilidade repetida!")
-
+        
         self.habilidades.append(habilidade_adquirida)
+
+    def deletar_habilidade(self, habilidade_del):
+        habilidade_del = habilidade_del.lower()
+
+        if habilidade_del not in self.habilidades:
+            raise HabilidadeNaoAdquiridaError
+        
+        self.habilidades.remove(habilidade_del)
 
     def habilidades_disponiveis(self):
         return [hab for hab in self.habilidades if self.habilidades_json[hab]["custo_mana"] <= self.mana]
@@ -110,17 +124,23 @@ class Player:
         if "cura" in habilidade["tipos"]:
             self.vida = min(self.vida_maxima, self.vida + habilidade["cura"])
 
-        if "efeitos" in habilidade["tipos"]:
-            alvo.tomou_efeito(habilidade["efeitos"])
+        if "efeito" in habilidade["tipos"]:
+            for efeito in habilidade["efeitos"]:
+                if efeito["alvo"] == "proprio":
+                    self.tomou_efeito(efeito["nome"])
+                elif efeito["alvo"] == "inimigo":
+                    alvo.tomou_efeito(efeito["nome"])
 
         self.mana -= habilidade["custo_mana"]
 
     def usar_habilidade(self, alvo, habilidade_req):
-        if habilidade_req.lower() not in self.habilidades_json:
+        habilidade_req = habilidade_req.lower()
+
+        if habilidade_req not in self.habilidades_json:
             raise HabilidadeInexistenteError(
                 f"A habilidade {habilidade_req} não existe no jogo!")
 
-        if habilidade_req.captalize() not in self.habilidades:
+        if habilidade_req not in self.habilidades:
             raise HabilidadeNaoAdquiridaError(
                 f"Você não possui a habilidade {habilidade_req}!")
 
@@ -129,7 +149,7 @@ class Player:
             raise ManaInsuficienteError(
                 "Você não possui mana suficiente para nenhuma habilidade!")
 
-        if habilidade_req.lower() not in hab_disp:
+        if habilidade_req not in hab_disp:
             raise ManaInsuficienteError(
                 "Você não possui mana suficiente para está habilidade!")
 

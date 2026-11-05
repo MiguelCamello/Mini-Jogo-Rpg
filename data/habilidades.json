@@ -1,9 +1,8 @@
+
 {
   "soco_fraco": {
     "nome": "Soco fraco",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano"],
     "raridade": "comum",
     "potencia": 5,
     "custo_mana": 0,
@@ -11,9 +10,7 @@
   },
   "soco_medio": {
     "nome": "Soco medio",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano"],
     "raridade": "comum",
     "potencia": 15,
     "custo_mana": 5,
@@ -21,9 +18,7 @@
   },
   "soco_forte": {
     "nome": "Soco forte",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano"],
     "raridade": "comum",
     "potencia": 35,
     "custo_mana": 15,
@@ -31,9 +26,7 @@
   },
   "cura_leve": {
     "nome": "Cura leve",
-    "tipos": [
-      "cura"
-    ],
+    "tipos": ["cura"],
     "raridade": "comum",
     "cura": 15,
     "custo_mana": 10,
@@ -41,9 +34,7 @@
   },
   "cura_media": {
     "nome": "Cura media",
-    "tipos": [
-      "cura"
-    ],
+    "tipos": ["cura"],
     "raridade": "comum",
     "cura": 30,
     "custo_mana": 15,
@@ -51,9 +42,7 @@
   },
   "cura_forte": {
     "nome": "Cura forte",
-    "tipos": [
-      "cura"
-    ],
+    "tipos": ["cura"],
     "raridade": "comum",
     "cura": 50,
     "custo_mana": 25,
@@ -61,24 +50,21 @@
   },
   "soco_pesado": {
     "nome": "Soco pesado",
-    "tipos": [
-      "dano",
-      "efeito"
-    ],
+    "tipos": ["dano", "efeito"],
     "raridade": "raro",
     "potencia": 50,
     "efeitos": [
-      "atordoado"
+      {
+        "nome": "atordoado",
+        "alvo": "inimigo"
+      }
     ],
     "custo_mana": 35,
     "descricao": "Um golpe pesado que pode deixar o alvo atordoado."
   },
   "golpe_vampirico": {
     "nome": "Golpe vampirico",
-    "tipos": [
-      "dano",
-      "cura"
-    ],
+    "tipos": ["dano", "cura"],
     "raridade": "epico",
     "potencia": 45,
     "cura": 20,
@@ -87,9 +73,7 @@
   },
   "mordida": {
     "nome": "Mordida",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano"],
     "raridade": "comum",
     "potencia": 15,
     "custo_mana": 0,
@@ -97,9 +81,7 @@
   },
   "ataque_rapido": {
     "nome": "Ataque rapido",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano"],
     "raridade": "comum",
     "potencia": 12,
     "custo_mana": 0,
@@ -107,22 +89,20 @@
   },
   "uivo": {
     "nome": "Uivo",
-    "tipos": [
-      "buff",
-      "efeito"
-    ],
+    "tipos": ["efeito"],
     "raridade": "raro",
     "efeitos": [
-      "fortalecido"
+      {
+        "nome": "fortalecido",
+        "alvo": "proprio"
+      }
     ],
     "custo_mana": 10,
     "descricao": "Um uivo que fortalece o usuario."
   },
   "golpe_brutal": {
     "nome": "Golpe brutal",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano"],
     "raridade": "raro",
     "potencia": 45,
     "custo_mana": 20,
@@ -130,10 +110,7 @@
   },
   "drenar_sangue": {
     "nome": "Drenar sangue",
-    "tipos": [
-      "dano",
-      "cura"
-    ],
+    "tipos": ["dano", "cura"],
     "raridade": "raro",
     "potencia": 25,
     "cura": 15,
@@ -142,23 +119,21 @@
   },
   "golpe_podre": {
     "nome": "Golpe podre",
-    "tipos": [
-      "dano",
-      "efeito"
-    ],
+    "tipos": ["dano", "efeito"],
     "raridade": "comum",
     "potencia": 18,
     "efeitos": [
-      "envenenado"
+      {
+        "nome": "envenenado",
+        "alvo": "inimigo"
+      }
     ],
     "custo_mana": 5,
     "descricao": "Um golpe contaminado que pode envenenar o alvo."
   },
   "estocada": {
     "nome": "Estocada",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano"],
     "raridade": "comum",
     "potencia": 28,
     "custo_mana": 5,
@@ -166,9 +141,7 @@
   },
   "bola_sombria": {
     "nome": "Bola sombria",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano"],
     "raridade": "raro",
     "potencia": 40,
     "custo_mana": 25,
@@ -176,9 +149,7 @@
   },
   "pedrada": {
     "nome": "Pedrada",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano"],
     "raridade": "comum",
     "potencia": 20,
     "custo_mana": 0,
@@ -186,37 +157,35 @@
   },
   "terremoto": {
     "nome": "Terremoto",
-    "tipos": [
-      "dano",
-      "efeito"
-    ],
+    "tipos": ["dano", "efeito"],
     "raridade": "epico",
     "potencia": 60,
     "efeitos": [
-      "atordoado"
+      {
+        "nome": "atordoado",
+        "alvo": "inimigo"
+      }
     ],
     "custo_mana": 40,
     "descricao": "Provoca um tremor violento que pode atordoar o alvo."
   },
   "sopro_de_fogo": {
     "nome": "Sopro de fogo",
-    "tipos": [
-      "dano",
-      "efeito"
-    ],
+    "tipos": ["dano", "efeito"],
     "raridade": "epico",
     "potencia": 50,
     "efeitos": [
-      "queimando"
+      {
+        "nome": "queimando",
+        "alvo": "inimigo"
+      }
     ],
     "custo_mana": 30,
     "descricao": "Libera uma rajada de fogo que pode incendiar o alvo."
   },
   "estocada_perfurante": {
     "nome": "Estocada perfurante",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano"],
     "raridade": "comum",
     "potencia": 30,
     "penetracao_defesa": 25,
@@ -225,9 +194,7 @@
   },
   "corte_perfurante": {
     "nome": "Corte perfurante",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano"],
     "raridade": "comum",
     "potencia": 40,
     "penetracao_defesa": 30,
@@ -236,9 +203,7 @@
   },
   "flecha_perfurante": {
     "nome": "Flecha perfurante",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano"],
     "raridade": "comum",
     "potencia": 35,
     "penetracao_defesa": 40,
@@ -247,9 +212,7 @@
   },
   "golpe_quebra_armadura": {
     "nome": "Golpe quebra-armadura",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano"],
     "raridade": "raro",
     "potencia": 50,
     "penetracao_defesa": 50,
@@ -258,38 +221,37 @@
   },
   "lanca_draconica": {
     "nome": "Lança dracônica",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano", "efeito"],
     "raridade": "epico",
     "potencia": 65,
     "penetracao_defesa": 65,
     "efeitos": [
-      "queimando"
+      {
+        "nome": "queimando",
+        "alvo": "inimigo"
+      }
     ],
     "custo_mana": 35,
     "descricao": "Uma lança envolta em fogo que perfura a defesa e pode queimar o alvo."
   },
   "ruptura_defensiva": {
     "nome": "Ruptura defensiva",
-    "tipos": [
-      "dano",
-      "efeito"
-    ],
+    "tipos": ["dano", "efeito"],
     "raridade": "epico",
     "potencia": 55,
     "penetracao_defesa": 50,
     "efeitos": [
-      "enfraquecido"
+      {
+        "nome": "enfraquecido",
+        "alvo": "inimigo"
+      }
     ],
     "custo_mana": 30,
     "descricao": "Um ataque que atravessa parte da defesa e enfraquece o alvo."
   },
   "golpe_absoluto": {
     "nome": "Golpe absoluto",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano"],
     "raridade": "raro",
     "potencia": 45,
     "ignorar_defesa": true,
@@ -298,9 +260,7 @@
   },
   "lamina_fantasma": {
     "nome": "Lâmina fantasma",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano"],
     "raridade": "raro",
     "potencia": 40,
     "ignorar_defesa": true,
@@ -309,9 +269,7 @@
   },
   "execucao_sombria": {
     "nome": "Execução sombria",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano"],
     "raridade": "epico",
     "potencia": 75,
     "ignorar_defesa": true,
@@ -320,9 +278,7 @@
   },
   "raio_arcano": {
     "nome": "Raio arcano",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano"],
     "raridade": "epico",
     "potencia": 60,
     "ignorar_defesa": true,
@@ -331,24 +287,22 @@
   },
   "julgamento_divino": {
     "nome": "Julgamento divino",
-    "tipos": [
-      "dano",
-      "efeito"
-    ],
+    "tipos": ["dano", "efeito"],
     "raridade": "lendario",
     "potencia": 100,
     "ignorar_defesa": true,
     "efeitos": [
-      "atordoado"
+      {
+        "nome": "atordoado",
+        "alvo": "inimigo"
+      }
     ],
     "custo_mana": 70,
     "descricao": "Um golpe celestial que ignora a defesa e pode atordoar o alvo."
   },
   "aniquilacao": {
     "nome": "Aniquilação",
-    "tipos": [
-      "dano"
-    ],
+    "tipos": ["dano"],
     "raridade": "lendario",
     "potencia": 130,
     "ignorar_defesa": true,
@@ -357,10 +311,7 @@
   },
   "contra_ataque_perfurante": {
     "nome": "Contra-ataque perfurante",
-    "tipos": [
-      "dano",
-      "defesa"
-    ],
+    "tipos": ["dano", "efeito"],
     "raridade": "raro",
     "potencia": 30,
     "defesa": 15,
@@ -370,10 +321,7 @@
   },
   "dreno_absoluto": {
     "nome": "Dreno absoluto",
-    "tipos": [
-      "dano",
-      "cura"
-    ],
+    "tipos": ["dano", "cura"],
     "raridade": "epico",
     "potencia": 45,
     "cura": 25,
@@ -383,27 +331,29 @@
   },
   "barreira_arcana": {
     "nome": "Barreira arcana",
-    "tipos": [
-      "defesa",
-      "cura"
-    ],
+    "tipos": ["efeito", "cura"],
     "raridade": "raro",
-    "defesa": 35,
+    "efeitos": [
+      {
+        "nome": "escudo",
+        "alvo": "proprio"
+      }
+    ],
     "cura": 20,
     "custo_mana": 30,
     "descricao": "Cria uma proteção mágica e restaura parte da vida do usuario."
   },
   "impacto_ardente": {
     "nome": "Impacto ardente",
-    "tipos": [
-      "dano",
-      "efeito"
-    ],
+    "tipos": ["dano", "efeito"],
     "raridade": "raro",
     "potencia": 45,
     "penetracao_defesa": 30,
     "efeitos": [
-      "queimando"
+      {
+        "nome": "queimando",
+        "alvo": "inimigo"
+      }
     ],
     "custo_mana": 25,
     "descricao": "Um impacto flamejante que penetra parte da defesa e pode queimar o alvo."

@@ -9,6 +9,7 @@ criar_todas_tabelas()
 
 goblin = criar_inimigo("goblin")
 lobo = criar_inimigo("lobo")
+lobo = criar_inimigo("zumbi")
 
 inimigos_list = [goblin, lobo]
 

@@ -3,7 +3,6 @@
     "goblin": {
         "sprite": "goblin",
         "nome": "Goblin",
-        "estados": ["Vivo"],
         "mana": 100,
         "defesa": 0,
         "vida": 100,
@@ -20,7 +19,6 @@
     "esqueleto": {
         "sprite": "esqueleto",
         "nome": "Esqueleto",
-        "estados": ["Morto-vivo"],
         "mana": 85,
         "defesa": 20,
         "vida": 80,
@@ -37,7 +35,6 @@
     "lobo": {
         "sprite": "cachorro",
         "nome": "Lobo",
-        "estados": ["Vivo"],
         "mana": 90,
         "defesa": 5,
         "vida": 75,
@@ -55,7 +52,6 @@
     "orc": {
         "sprite": "fantasma",
         "nome": "Orc",
-        "estados": ["Vivo"],
         "mana": 120,
         "defesa": 15,
         "vida": 150,
@@ -73,7 +69,6 @@
     "morcego_gigante": {
         "sprite": "morcego",
         "nome": "Morcego gigante",
-        "estados": ["Vivo"],
         "mana": 70,
         "defesa": 0,
         "vida": 55,
@@ -91,7 +86,6 @@
     "zumbi": {
         "sprite": "zumbi",
         "nome": "zumbi",
-        "estados": ["Morto-vivo"],
         "mana": 60,
         "defesa": 5,
         "vida": 130,
@@ -109,7 +103,6 @@
     "cavaleiro_esqueleto": {
         "sprite": "esqueleto",
         "nome": "Cavaleiro esqueleto",
-        "estados": ["Morto-vivo"],
         "mana": 110,
         "defesa": 35,
         "vida": 120,
@@ -128,7 +121,6 @@
     "mago_sombrio": {
         "sprite": "monstro",
         "nome": "Mago sombrio",
-        "estados": ["Vivo"],
         "mana": 150,
         "defesa": 0,
         "vida": 85,
@@ -146,7 +138,6 @@
     "golem_de_pedra": {
         "sprite": "caixa",
         "nome": "Golem de pedra",
-        "estados": ["Vivo"],
         "mana": 100,
         "defesa": 50,
         "vida": 250,
@@ -164,7 +155,6 @@
     "vampiro": {
         "sprite": "monstro_triste",
         "nome": "Vampiro",
-        "estados": ["Morto-vivo"],
         "mana": 140,
         "defesa": 15,
         "vida": 180,
@@ -183,7 +173,6 @@
     "dragao_jovem": {
         "sprite": "dragao",
         "nome": "Dragao jovem",
-        "estados": ["Vivo"],
         "mana": 180,
         "defesa": 30,
         "vida": 350,

@@ -8,7 +8,7 @@ class Inimigo:
         self.sprites_json = sprites_json
         self.sprite = inimigo_json["sprite"]
         self.nome = inimigo_json["nome"]
-        self.estados = inimigo_json["estados"]
+        self.estados = []
         self.mana_maxima = inimigo_json["mana"]
         self.mana = inimigo_json["mana"]
         self.vida_maxima = inimigo_json["vida"]
@@ -32,10 +32,15 @@ class Inimigo:
             self.mana + 20
         )
 
-    def morto(self, atacante):
+    @property
+    def vivo(self):
+        return self.vida > 0
+
+    def morrer(self, atacante):
         print(f"{self.nome} foi morto por {atacante.nome}!")
 
-        self.estados = ["morto"]
+        self.vivo
+
         atacante.ganhou_exp(self.exp_drop)
         print(f"{atacante.nome} ganhou {self.exp_drop} de exp!")
 
@@ -60,14 +65,13 @@ class Inimigo:
         dano_final = max(0, dano - defesa_aplicada)
         self.vida = round(max(0, self.vida - dano_final))
         if self.vida == 0 and "morto" not in self.estados:
-            self.morto(atacante)
+            self.morrer(atacante)
 
-    def tomou_efeito(self, efeitos):
-        for efeito in efeitos:
-            if efeito in self.estados:
-                print(f"O {self.nome} já possui o efeito {efeito}!")
-                continue
-            self.estados.append(efeito)
+    def tomou_efeito(self, efeito):
+        if efeito in self.estados:
+            print(f"O {self.nome} já possui o efeito {efeito}!")
+            return
+        self.estados.append(efeito)
 
     def habilidades_disponiveis(self):
         return [hab for hab in self.habilidades if self.habilidades_json[hab]["custo_mana"] <= self.mana]
@@ -81,8 +85,6 @@ class Inimigo:
 
         print(f"{self.nome} usou a habilidade {habilidade['nome']} no {alvo.nome}!")
 
-        self.mana -= habilidade["custo_mana"]
-
         if "dano" in habilidade["tipos"]:
             alvo.tomou_dano(habilidade, self)
 
@@ -90,7 +92,13 @@ class Inimigo:
             self.vida = min(self.vida_maxima, self.vida + habilidade["cura"])
 
         if "efeito" in habilidade["tipos"]:
-            alvo.tomou_efeito(habilidade["efeitos"])
+            for efeito in habilidade["efeitos"]:
+                if efeito["alvo"] == "proprio":
+                    self.tomou_efeito(efeito["nome"])
+                elif efeito["alvo"] == "inimigo":
+                    alvo.tomou_efeito(efeito["nome"])
+
+        self.mana -= habilidade["custo_mana"]
 
     def sprite_dict(self):
         if self.sprite not in self.sprites_json:
@@ -117,7 +125,7 @@ class Inimigo:
 |{"FICHA DO INIMIGO":^46}|
 {linha}
 | Nome: {self.nome:<39}|
-| Estados: {', '.join(self.estados):<37}|
+| Estados: {', '.join(self.estados):<36}|
 {linha}
 |{"ATRIBUTOS":<46}|
 | Vida: {str(self.vida)+"/"+str(self.vida_maxima):<39}|

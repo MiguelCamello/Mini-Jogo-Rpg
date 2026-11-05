@@ -29,7 +29,7 @@ def inspecionar_habilidade(habilidade_req):
 |{"- Potencia:":<16}{habilidade_dados.get('potencia', '0'):<30}|
 |{"- Penetração:":<16}{habilidade_dados.get('penetracao_defesa', '0'):<30}|
 |{"- Ignora def:":<16}{habilidade_dados.get('ignorar_defesa', 'Não ignora!'):<30}|
-|{"- Efeitos:":<16}{", ".join(habilidade_dados.get('efeitos', ['nenhum'])):<30}|
+|{"- Efeitos:":<16}{", ".join(habilidade_dados.get('efeitos', ['nenhum'])["nome"]):<30}|
 |{"- Custo mana:":<16}{habilidade_dados['custo_mana']:<30}|
 |{"- Descrição:":<46}|
 {descricao}
@@ -64,6 +64,7 @@ def inspecionar_efeito(efeito_req):
 |{"- Duração:":<16}{duracao:<30}|
 |{"- Dano_turno:":<16}{efeito_dados.get('dano_por_turno', "Sem dano"):<30}|
 |{"- Cura_turno:":<16}{efeito_dados.get('cura_por_turno', "Sem cura"):<30}|
+|{"- Defesa_turno:":<16}{efeito_dados.get('defesa_por_turno', "Sem defesa"):<30}|
 |{"- Modificador:":<16}{str(efeito_dados.get('modificador_dano', "0"))+"% de dano":<30}|
 |{"- Descrição:":<46}|
 {descricao}
@@ -76,4 +77,3 @@ def inspecionar_item(item):
 
 # inspecionar_habilidade("cura_forte")
 # inspecionar_efeito("enfraquecido")
-

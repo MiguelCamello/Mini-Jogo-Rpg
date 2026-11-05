@@ -48,7 +48,7 @@
   "enfraquecido": {
     "cor": "\u001b[30m",
     "nome": "Enfraquecido",
-    "tipo": "debilitacao",
+    "tipo": "debuff",
     "duracao_turnos": 2,
     "modificador_dano": -25,
     "descricao": "A entidade causa menos dano."
@@ -56,9 +56,17 @@
   "fortalecido": {
     "cor": "\u001b[33m",
     "nome": "Fortalecido",
-    "tipo": "beneficio",
+    "tipo": "buff",
     "duracao_turnos": 3,
     "modificador_dano": 25,
     "descricao": "A entidade causa mais dano."
+  },
+  "escudo": {
+    "cor": "\u001b[33m",
+    "nome": "Escudo",
+    "tipo": "buff",
+    "duracao_turnos": 2,
+    "defesa_por_turno": 20,
+    "descricao": "O usuario ganha um escudo temporário."
   }
 }
