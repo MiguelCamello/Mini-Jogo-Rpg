@@ -47,7 +47,7 @@ class Inimigo:
     def descansar(self):
         self.mana = min(
             self.mana_maxima,
-            self.mana + 20
+            self.mana + 50
         )
 
     def tomou_dano(self, habilidade_tomada, atacante):

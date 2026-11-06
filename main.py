@@ -1,7 +1,7 @@
 from database.criar_todas_tabelas import criar_todas_tabelas
-from sistemas.criar_classe import criar_inimigo, criar_player
-from sistemas.busca import buscar_objeto
 from database.saves import salvar_player
+from sistemas.busca import buscar_objeto
+from sistemas.criar_classe import criar_inimigo, criar_player
 import time
 import os
 

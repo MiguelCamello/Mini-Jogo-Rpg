@@ -53,7 +53,7 @@ def tela_combate(player_obj, inimigo_obj):
 {espaco}
 |{DOURADO}{nome_player:^28} {" "*30} {PRETO}{nome_inimigo:^30}{RESET}|
 {espaco}
-| {formatar_estados(player_obj.estados):^30} {" "*32} {formatar_estados(inimigo_obj.estados):^30} |
+|{centralizar(formatar_estados(player_obj.estados),30)}{" "*32}{centralizar(formatar_estados(inimigo_obj.estados),30)}|
 {espaco}
 |{Exp_Player["l1"]} {" "*4}{centralizar(sprite.get("l1", ""), 26)} {Vida_Inimigo["l1"]}|
 |{Exp_Player["l2"]} {" "*4}{centralizar(sprite.get("l2", ""), 26)} {Vida_Inimigo["l2"]}|

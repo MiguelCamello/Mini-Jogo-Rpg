@@ -9,10 +9,10 @@ class Player:
                  nivel=1,
                  exp_necessario=200,
                  exp=0,
-                 mana_maxima=50,
-                 mana=50,
-                 vida_maxima=100,
-                 vida=100,
+                 mana_maxima=100,
+                 mana=100,
+                 vida_maxima=150,
+                 vida=150,
                  defesa=10,
                  itens={},
                  habilidades=None
@@ -49,7 +49,7 @@ class Player:
     def descansar(self):
         self.mana = min(
             self.mana_maxima,
-            self.mana + 20
+            self.mana + 50
         )
 
     def tomou_dano(self, habilidade_tomada, atacante):

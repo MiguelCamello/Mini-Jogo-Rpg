@@ -10,5 +10,8 @@ class ManaInsuficienteError(Exception):
 class SpriteInexistenteError(Exception):
     pass
 
+class InimigoInexistenteError(Exception):
+    pass
+
 class EfeitoInexistenteError(Exception):
     pass
