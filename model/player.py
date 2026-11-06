@@ -46,6 +46,12 @@ class Player:
         print(f"Você morreu para um {atacante}")
         # vou fazer penalidade
 
+    def descansar(self):
+        self.mana = min(
+            self.mana_maxima,
+            self.mana + 20
+        )
+
     def tomou_dano(self, habilidade_tomada, atacante):
         dano = habilidade_tomada["potencia"]
         penetracao_defesa = habilidade_tomada.get("penetracao_defesa", 0)

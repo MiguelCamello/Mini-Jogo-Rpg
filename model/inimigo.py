@@ -26,11 +26,6 @@ class Inimigo:
 
         self.habilidades = rm.sample(habilidades_possiveis, quantidade)
 
-    def descansar(self):
-        self.mana = min(
-            self.mana_maxima,
-            self.mana + 20
-        )
 
     @property
     def vivo(self):
@@ -49,6 +44,11 @@ class Inimigo:
                 atacante.ganhou_item(item)
                 print(f"{atacante.nome} ganhou {item}!")
 
+    def descansar(self):
+        self.mana = min(
+            self.mana_maxima,
+            self.mana + 20
+        )
 
     def tomou_dano(self, habilidade_tomada, atacante):
         dano = habilidade_tomada["potencia"]

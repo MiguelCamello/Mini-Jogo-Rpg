@@ -42,7 +42,7 @@ fundos={
     "laranja": 43,
     "amarelo": 103,
 }
-if (__file__) == "__main__":
+if __name__ == "__main__":
     for nome, codigo in cores.items():
         print(f"\033[{codigo}m■ {codigo} - {nome}\033[0m")
 

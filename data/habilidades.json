@@ -24,6 +24,38 @@
     "custo_mana": 15,
     "descricao": "Um soco forte convencional."
   },
+  "mordida": {
+    "nome": "Mordida",
+    "tipos": ["dano"],
+    "raridade": "comum",
+    "potencia": 15,
+    "custo_mana": 0,
+    "descricao": "Uma mordida que causa dano ao alvo."
+  },
+  "ataque_rapido": {
+    "nome": "Ataque rapido",
+    "tipos": ["dano"],
+    "raridade": "comum",
+    "potencia": 12,
+    "custo_mana": 0,
+    "descricao": "Um ataque veloz que causa dano ao alvo."
+  },
+  "pedrada": {
+    "nome": "Pedrada",
+    "tipos": ["dano"],
+    "raridade": "comum",
+    "potencia": 20,
+    "custo_mana": 0,
+    "descricao": "Arremessa uma pedra contra o alvo."
+  },
+  "estocada": {
+    "nome": "Estocada",
+    "tipos": ["dano"],
+    "raridade": "comum",
+    "potencia": 28,
+    "custo_mana": 5,
+    "descricao": "Um ataque direto e preciso com uma arma pontiaguda."
+  },
   "cura_leve": {
     "nome": "Cura leve",
     "tipos": ["cura"],
@@ -48,6 +80,48 @@
     "custo_mana": 25,
     "descricao": "Uma magia poderosa que restaura uma grande quantidade de vida."
   },
+  "estocada_perfurante": {
+    "nome": "Estocada perfurante",
+    "tipos": ["dano"],
+    "raridade": "comum",
+    "potencia": 30,
+    "penetracao_defesa": 25,
+    "custo_mana": 10,
+    "descricao": "Uma estocada precisa que ignora 25% da defesa do alvo."
+  },
+  "corte_perfurante": {
+    "nome": "Corte perfurante",
+    "tipos": ["dano"],
+    "raridade": "comum",
+    "potencia": 40,
+    "penetracao_defesa": 30,
+    "custo_mana": 15,
+    "descricao": "Um corte profundo que atravessa parte da defesa do alvo."
+  },
+  "flecha_perfurante": {
+    "nome": "Flecha perfurante",
+    "tipos": ["dano"],
+    "raridade": "comum",
+    "potencia": 35,
+    "penetracao_defesa": 40,
+    "custo_mana": 10,
+    "descricao": "Uma flecha veloz que ignora 40% da defesa do alvo."
+  },
+  "golpe_podre": {
+    "nome": "Golpe podre",
+    "tipos": ["dano", "efeito"],
+    "raridade": "comum",
+    "potencia": 18,
+    "efeitos": [
+      {
+        "nome": "envenenado",
+        "alvo": "inimigo"
+      }
+    ],
+    "custo_mana": 5,
+    "descricao": "Um golpe contaminado que pode envenenar o alvo."
+  },
+
   "soco_pesado": {
     "nome": "Soco pesado",
     "tipos": ["dano", "efeito"],
@@ -61,31 +135,6 @@
     ],
     "custo_mana": 35,
     "descricao": "Um golpe pesado que pode deixar o alvo atordoado."
-  },
-  "golpe_vampirico": {
-    "nome": "Golpe vampirico",
-    "tipos": ["dano", "cura"],
-    "raridade": "epico",
-    "potencia": 45,
-    "cura": 20,
-    "custo_mana": 25,
-    "descricao": "Um golpe vampirico que causa dano e restaura vida do usuario."
-  },
-  "mordida": {
-    "nome": "Mordida",
-    "tipos": ["dano"],
-    "raridade": "comum",
-    "potencia": 15,
-    "custo_mana": 0,
-    "descricao": "Uma mordida que causa dano ao alvo."
-  },
-  "ataque_rapido": {
-    "nome": "Ataque rapido",
-    "tipos": ["dano"],
-    "raridade": "comum",
-    "potencia": 12,
-    "custo_mana": 0,
-    "descricao": "Um ataque veloz que causa dano ao alvo."
   },
   "uivo": {
     "nome": "Uivo",
@@ -117,28 +166,6 @@
     "custo_mana": 20,
     "descricao": "Causa dano ao alvo e recupera vida do usuario."
   },
-  "golpe_podre": {
-    "nome": "Golpe podre",
-    "tipos": ["dano", "efeito"],
-    "raridade": "comum",
-    "potencia": 18,
-    "efeitos": [
-      {
-        "nome": "envenenado",
-        "alvo": "inimigo"
-      }
-    ],
-    "custo_mana": 5,
-    "descricao": "Um golpe contaminado que pode envenenar o alvo."
-  },
-  "estocada": {
-    "nome": "Estocada",
-    "tipos": ["dano"],
-    "raridade": "comum",
-    "potencia": 28,
-    "custo_mana": 5,
-    "descricao": "Um ataque direto e preciso com uma arma pontiaguda."
-  },
   "bola_sombria": {
     "nome": "Bola sombria",
     "tipos": ["dano"],
@@ -147,13 +174,123 @@
     "custo_mana": 25,
     "descricao": "Uma esfera de energia sombria que atinge o alvo."
   },
-  "pedrada": {
-    "nome": "Pedrada",
+  "golpe_quebra_armadura": {
+    "nome": "Golpe quebra-armadura",
     "tipos": ["dano"],
-    "raridade": "comum",
-    "potencia": 20,
-    "custo_mana": 0,
-    "descricao": "Arremessa uma pedra contra o alvo."
+    "raridade": "raro",
+    "potencia": 50,
+    "penetracao_defesa": 50,
+    "custo_mana": 25,
+    "descricao": "Um golpe pesado que atravessa metade da defesa do alvo."
+  },
+  "golpe_absoluto": {
+    "nome": "Golpe absoluto",
+    "tipos": ["dano"],
+    "raridade": "raro",
+    "potencia": 45,
+    "ignorar_defesa": true,
+    "custo_mana": 30,
+    "descricao": "Um golpe concentrado que ignora completamente a defesa do alvo."
+  },
+  "lamina_fantasma": {
+    "nome": "Lamina fantasma",
+    "tipos": ["dano"],
+    "raridade": "raro",
+    "potencia": 40,
+    "ignorar_defesa": true,
+    "custo_mana": 25,
+    "descricao": "Uma lamina espectral que atravessa armaduras e protecoes."
+  },
+  "contra_ataque_perfurante": {
+    "nome": "Contra-ataque perfurante",
+    "tipos": ["dano", "efeito"],
+    "raridade": "raro",
+    "potencia": 30,
+    "defesa": 15,
+    "penetracao_defesa": 35,
+    "custo_mana": 25,
+    "descricao": "Ataca ignorando parte da defesa do alvo e concede defesa ao usuario."
+  },
+  "barreira_arcana": {
+    "nome": "Barreira arcana",
+    "tipos": ["efeito", "cura"],
+    "raridade": "raro",
+    "efeitos": [
+      {
+        "nome": "escudo",
+        "alvo": "proprio"
+      }
+    ],
+    "cura": 20,
+    "custo_mana": 30,
+    "descricao": "Cria uma protecao magica e restaura parte da vida do usuario."
+  },
+  "impacto_ardente": {
+    "nome": "Impacto ardente",
+    "tipos": ["dano", "efeito"],
+    "raridade": "raro",
+    "potencia": 45,
+    "penetracao_defesa": 30,
+    "efeitos": [
+      {
+        "nome": "queimando",
+        "alvo": "inimigo"
+      }
+    ],
+    "custo_mana": 25,
+    "descricao": "Um impacto flamejante que penetra parte da defesa e pode queimar o alvo."
+  },
+  "investida": {
+    "nome": "Investida",
+    "tipos": ["dano", "efeito"],
+    "raridade": "raro",
+    "potencia": 35,
+    "efeitos": [
+      {
+        "nome": "enfraquecido",
+        "alvo": "inimigo"
+      }
+    ],
+    "custo_mana": 20,
+    "descricao": "Avanca contra o alvo com forca, reduzindo seu poder."
+  },
+  "pele_de_ferro": {
+    "nome": "Pele de ferro",
+    "tipos": ["efeito"],
+    "raridade": "raro",
+    "efeitos": [
+      {
+        "nome": "escudo",
+        "alvo": "proprio"
+      }
+    ],
+    "defesa": 30,
+    "custo_mana": 25,
+    "descricao": "Reveste o corpo do usuario com uma protecao resistente."
+  },
+  "onda_de_choque": {
+    "nome": "Onda de choque",
+    "tipos": ["dano", "efeito"],
+    "raridade": "raro",
+    "potencia": 40,
+    "efeitos": [
+      {
+        "nome": "atordoado",
+        "alvo": "inimigo"
+      }
+    ],
+    "custo_mana": 30,
+    "descricao": "Libera uma onda de energia que pode atordoar o alvo."
+  },
+
+  "golpe_vampirico": {
+    "nome": "Golpe vampirico",
+    "tipos": ["dano", "cura"],
+    "raridade": "epico",
+    "potencia": 45,
+    "cura": 20,
+    "custo_mana": 25,
+    "descricao": "Um golpe vampirico que causa dano e restaura vida do usuario."
   },
   "terremoto": {
     "nome": "Terremoto",
@@ -183,44 +320,8 @@
     "custo_mana": 30,
     "descricao": "Libera uma rajada de fogo que pode incendiar o alvo."
   },
-  "estocada_perfurante": {
-    "nome": "Estocada perfurante",
-    "tipos": ["dano"],
-    "raridade": "comum",
-    "potencia": 30,
-    "penetracao_defesa": 25,
-    "custo_mana": 10,
-    "descricao": "Uma estocada precisa que ignora 25% da defesa do alvo."
-  },
-  "corte_perfurante": {
-    "nome": "Corte perfurante",
-    "tipos": ["dano"],
-    "raridade": "comum",
-    "potencia": 40,
-    "penetracao_defesa": 30,
-    "custo_mana": 15,
-    "descricao": "Um corte profundo que atravessa parte da defesa do alvo."
-  },
-  "flecha_perfurante": {
-    "nome": "Flecha perfurante",
-    "tipos": ["dano"],
-    "raridade": "comum",
-    "potencia": 35,
-    "penetracao_defesa": 40,
-    "custo_mana": 10,
-    "descricao": "Uma flecha veloz que ignora 40% da defesa do alvo."
-  },
-  "golpe_quebra_armadura": {
-    "nome": "Golpe quebra-armadura",
-    "tipos": ["dano"],
-    "raridade": "raro",
-    "potencia": 50,
-    "penetracao_defesa": 50,
-    "custo_mana": 25,
-    "descricao": "Um golpe pesado que atravessa metade da defesa do alvo."
-  },
   "lanca_draconica": {
-    "nome": "Lança dracônica",
+    "nome": "Lanca draconica",
     "tipos": ["dano", "efeito"],
     "raridade": "epico",
     "potencia": 65,
@@ -232,7 +333,7 @@
       }
     ],
     "custo_mana": 35,
-    "descricao": "Uma lança envolta em fogo que perfura a defesa e pode queimar o alvo."
+    "descricao": "Uma lanca envolta em fogo que perfura a defesa e pode queimar o alvo."
   },
   "ruptura_defensiva": {
     "nome": "Ruptura defensiva",
@@ -249,26 +350,8 @@
     "custo_mana": 30,
     "descricao": "Um ataque que atravessa parte da defesa e enfraquece o alvo."
   },
-  "golpe_absoluto": {
-    "nome": "Golpe absoluto",
-    "tipos": ["dano"],
-    "raridade": "raro",
-    "potencia": 45,
-    "ignorar_defesa": true,
-    "custo_mana": 30,
-    "descricao": "Um golpe concentrado que ignora completamente a defesa do alvo."
-  },
-  "lamina_fantasma": {
-    "nome": "Lâmina fantasma",
-    "tipos": ["dano"],
-    "raridade": "raro",
-    "potencia": 40,
-    "ignorar_defesa": true,
-    "custo_mana": 25,
-    "descricao": "Uma lâmina espectral que atravessa armaduras e proteções."
-  },
   "execucao_sombria": {
-    "nome": "Execução sombria",
+    "nome": "Execucao sombria",
     "tipos": ["dano"],
     "raridade": "epico",
     "potencia": 75,
@@ -283,8 +366,59 @@
     "potencia": 60,
     "ignorar_defesa": true,
     "custo_mana": 40,
-    "descricao": "Um raio mágico que atravessa as proteções físicas do alvo."
+    "descricao": "Um raio magico que atravessa as protecoes fisicas do alvo."
   },
+  "dreno_absoluto": {
+    "nome": "Dreno absoluto",
+    "tipos": ["dano", "cura"],
+    "raridade": "epico",
+    "potencia": 45,
+    "cura": 25,
+    "ignorar_defesa": true,
+    "custo_mana": 40,
+    "descricao": "Causa dano que ignora a defesa e restaura vida do usuario."
+  },
+  "tempestade_de_laminas": {
+    "nome": "Tempestade de laminas",
+    "tipos": ["dano"],
+    "raridade": "epico",
+    "potencia": 80,
+    "custo_mana": 45,
+    "descricao": "Invoca uma chuva de laminas que atinge o alvo repetidamente."
+  },
+  "furia_elemental": {
+    "nome": "Furia elemental",
+    "tipos": ["dano", "efeito"],
+    "raridade": "epico",
+    "potencia": 65,
+    "efeitos": [
+      {
+        "nome": "queimando",
+        "alvo": "inimigo"
+      },
+      {
+        "nome": "enfraquecido",
+        "alvo": "inimigo"
+      }
+    ],
+    "custo_mana": 50,
+    "descricao": "Uma explosao elemental que queima e enfraquece o alvo."
+  },
+  "regeneracao_arcana": {
+    "nome": "Regeneracao arcana",
+    "tipos": ["cura", "efeito"],
+    "raridade": "epico",
+    "cura": 65,
+    "efeitos": [
+      {
+        "nome": "fortalecido",
+        "alvo": "proprio"
+      }
+    ],
+    "custo_mana": 45,
+    "descricao": "Restaura uma grande quantidade de vida e fortalece o usuario."
+  },
+
   "julgamento_divino": {
     "nome": "Julgamento divino",
     "tipos": ["dano", "efeito"],
@@ -301,7 +435,7 @@
     "descricao": "Um golpe celestial que ignora a defesa e pode atordoar o alvo."
   },
   "aniquilacao": {
-    "nome": "Aniquilação",
+    "nome": "Aniquilacao",
     "tipos": ["dano"],
     "raridade": "lendario",
     "potencia": 130,
@@ -309,53 +443,116 @@
     "custo_mana": 90,
     "descricao": "Um ataque extremo que ignora completamente a defesa do alvo."
   },
-  "contra_ataque_perfurante": {
-    "nome": "Contra-ataque perfurante",
+  "colera_dos_deuses": {
+    "nome": "Colera dos deuses",
     "tipos": ["dano", "efeito"],
-    "raridade": "raro",
-    "potencia": 30,
-    "defesa": 15,
-    "penetracao_defesa": 35,
-    "custo_mana": 25,
-    "descricao": "Ataca ignorando parte da defesa do alvo e concede defesa ao usuario."
-  },
-  "dreno_absoluto": {
-    "nome": "Dreno absoluto",
-    "tipos": ["dano", "cura"],
-    "raridade": "epico",
-    "potencia": 45,
-    "cura": 25,
-    "ignorar_defesa": true,
-    "custo_mana": 40,
-    "descricao": "Causa dano que ignora a defesa e restaura vida do usuario."
-  },
-  "barreira_arcana": {
-    "nome": "Barreira arcana",
-    "tipos": ["efeito", "cura"],
-    "raridade": "raro",
+    "raridade": "lendario",
+    "potencia": 110,
+    "penetracao_defesa": 75,
     "efeitos": [
       {
-        "nome": "escudo",
+        "nome": "enfraquecido",
+        "alvo": "inimigo"
+      }
+    ],
+    "custo_mana": 80,
+    "descricao": "Uma descarga divina que atravessa defesas e enfraquece o alvo."
+  },
+  "renascimento": {
+    "nome": "Renascimento",
+    "tipos": ["cura", "efeito"],
+    "raridade": "lendario",
+    "cura": 120,
+    "efeitos": [
+      {
+        "nome": "fortalecido",
         "alvo": "proprio"
       }
     ],
-    "cura": 20,
-    "custo_mana": 30,
-    "descricao": "Cria uma proteção mágica e restaura parte da vida do usuario."
+    "custo_mana": 85,
+    "descricao": "Uma energia celestial restaura a vida e fortalece o usuario."
   },
-  "impacto_ardente": {
-    "nome": "Impacto ardente",
+  "ruptura_dimensional": {
+    "nome": "Ruptura dimensional",
+    "tipos": ["dano"],
+    "raridade": "lendario",
+    "potencia": 120,
+    "ignorar_defesa": true,
+    "custo_mana": 85,
+    "descricao": "Abre uma fenda dimensional que atinge diretamente o alvo."
+  },
+
+  "devorador_de_mundos": {
+    "nome": "Devorador de mundos",
+    "tipos": ["dano", "cura", "efeito"],
+    "raridade": "mitico",
+    "potencia": 150,
+    "cura": 50,
+    "ignorar_defesa": true,
+    "efeitos": [
+      {
+        "nome": "enfraquecido",
+        "alvo": "inimigo"
+      }
+    ],
+    "custo_mana": 120,
+    "descricao": "Uma energia ancestral consome o alvo, atravessa suas defesas, restaura a vida do usuario e o enfraquece."
+  },
+  "ira_do_dragao_primordial": {
+    "nome": "Ira do dragao primordial",
     "tipos": ["dano", "efeito"],
-    "raridade": "raro",
-    "potencia": 45,
-    "penetracao_defesa": 30,
+    "raridade": "mitico",
+    "potencia": 170,
+    "ignorar_defesa": true,
     "efeitos": [
       {
         "nome": "queimando",
         "alvo": "inimigo"
+      },
+      {
+        "nome": "atordoado",
+        "alvo": "inimigo"
       }
     ],
-    "custo_mana": 25,
-    "descricao": "Um impacto flamejante que penetra parte da defesa e pode queimar o alvo."
+    "custo_mana": 130,
+    "descricao": "A furia de um dragao ancestral atinge o alvo com chamas devastadoras."
+  },
+  "muralha_do_eterno": {
+    "nome": "Muralha do eterno",
+    "tipos": ["efeito", "cura"],
+    "raridade": "mitico",
+    "cura": 100,
+    "defesa": 100,
+    "efeitos": [
+      {
+        "nome": "escudo",
+        "alvo": "proprio"
+      },
+      {
+        "nome": "fortalecido",
+        "alvo": "proprio"
+      }
+    ],
+    "custo_mana": 110,
+    "descricao": "Uma protecao ancestral envolve o usuario, restaura sua vida e aumenta sua resistencia."
+  },
+  "sentenca_do_vazio": {
+    "nome": "Sentenca do vazio",
+    "tipos": ["dano", "efeito"],
+    "raridade": "mitico",
+    "potencia": 200,
+    "ignorar_defesa": true,
+    "efeitos": [
+      {
+        "nome": "atordoado",
+        "alvo": "inimigo"
+      },
+      {
+        "nome": "enfraquecido",
+        "alvo": "inimigo"
+      }
+    ],
+    "custo_mana": 150,
+    "descricao": "Uma sentenca de energia do vazio atravessa qualquer protecao e debilita o alvo."
   }
 }
