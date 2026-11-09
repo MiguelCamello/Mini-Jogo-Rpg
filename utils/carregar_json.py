@@ -7,9 +7,19 @@ HABILIDADES_JSON = BASE_DIR / "data" / "habilidades.json"
 EFEITOS_JSON = BASE_DIR / "data" / "efeitos.json"
 ITENS_JSON = BASE_DIR / "data" / "itens.json"
 SPRITES_JSON = BASE_DIR / "data" / "sprites.json"
+CORES_JSON = BASE_DIR / "data" / "cores.json"
 
-def carregar_json(inimigo=False, habilidades=False, efeitos=False, itens=False, sprites=False):
+def carregar_json(
+        inimigo=False,
+        habilidades=False,
+        efeitos=False,
+        itens=False,
+        sprites=False,
+        cores=False
+        ):
+    
     dados={}
+
     if inimigo:
         with open(INIMIGOS_JSON, "r", encoding="utf-8") as inimigos:
             dados["inimigos"] = json.load(inimigos)
@@ -20,10 +30,13 @@ def carregar_json(inimigo=False, habilidades=False, efeitos=False, itens=False, 
         with open(EFEITOS_JSON, "r", encoding="utf-8") as efeitos:
             dados["efeitos"] = json.load(efeitos)
     if itens:
-            with open(ITENS_JSON, "r", encoding="utf-8") as itens:
-                dados["itens"] = json.load(itens)
+        with open(ITENS_JSON, "r", encoding="utf-8") as itens:
+            dados["itens"] = json.load(itens)
     if sprites:
-            with open(SPRITES_JSON, "r", encoding="utf-8") as sprites:
-                dados["sprites"] = json.load(sprites)
-    return dados
+        with open(SPRITES_JSON, "r", encoding="utf-8") as sprites:
+            dados["sprites"] = json.load(sprites)
+    if cores:
+         with open(CORES_JSON, "r", encoding="utf-8") as cores:
+            dados["cores"] = json.load(cores)
 
+    return dados

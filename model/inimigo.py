@@ -76,9 +76,9 @@ class Inimigo:
     def habilidades_disponiveis(self):
         return [hab for hab in self.habilidades if self.habilidades_json[hab]["custo_mana"] <= self.mana]
 
-    def usar_habilidade(self, alvo): # é aleatoria
+    def atacar(self, alvo): # é aleatoria
         if not (habilidades_disponiveis := self.habilidades_disponiveis()): # := cria var e usa na comparação na msm linha
-            raise ManaInsuficienteError(f"{self.nome} não tem mana para usar nenhuma habilidade!")
+            self.descansar()
 
         habilidade_req = rm.choice(habilidades_disponiveis)
         habilidade = self.habilidades_json[habilidade_req]

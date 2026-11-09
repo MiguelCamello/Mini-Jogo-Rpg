@@ -1,7 +1,7 @@
 from database.tabelas import (
     players_db, habilidades_db, itens_db, estados_db,
     players_estados_db, players_habilidades_db, players_itens_db)
-from sistemas.criar_classe import criar_player
+from utils.criar_classe import criar_player
 from database.conexao import conectar
 from contextlib import closing
 import sqlite3
@@ -157,23 +157,3 @@ def deleter_player(player_id):
 
 def obter_players():
     return players_db.get_all()
-
-def listar_players():
-    linha = "+"+"-"*46+"+"
-    players_dados = players_db.get_all()
-    for player in players_dados:
-        print(f"""
-{linha}
-|{f"FICHA DO PLAYER Id:{player["id"]}":^46}|
-{linha}
-| Nome: {player["nome"]:<39}|
-| Nivel: {player["nivel"]:<38}|
-{linha}
-|{"ATRIBUTOS":<46}|
-| Vida: {str(player["vida_maxima"])+"/"+str(player["vida"]):<39}|
-| Mana: {str(player["mana_maxima"])+"/"+str(player["mana"]):<39}|
-| Defesa: {player["defesa"]:<37}|
-| Experiência: {str(player["exp_necessario"])+"/"+str(player["exp"]):<32}|
-{linha}
-""")
-

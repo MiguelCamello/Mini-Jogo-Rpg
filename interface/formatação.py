@@ -5,9 +5,11 @@ import platform
 import time
 import re
 
+
 def limpar_terminal():
     comando = "cls" if platform.system() == "Windows" else "clear"
     subprocess.run(comando, shell=True)
+
 
 def centralizar(texto, largura):
     texto_limpo = re.sub(r'\033\[[0-9;]*m', '', texto)
@@ -18,18 +20,21 @@ def centralizar(texto, largura):
 
     return " " * esquerda + texto + " " * direita
 
+
 def alinhar_para(texto, largura, direcao):
     texto_limpo = re.sub(r'\033\[[0-9;]*m', '', texto)
     espacos = largura - wcswidth(texto_limpo)
 
     if direcao == "esquerda":
         return texto + " "*espacos
-    
+
     elif direcao == "direita":
         return " "*espacos + texto
 
+
 def espacamento(espaco):
     print(" "*espaco, end="")
+
 
 def slow_print(texto, delay=0.05, cor="\033[0m", end="\n"):
     print(cor, end="")
@@ -41,6 +46,11 @@ def slow_print(texto, delay=0.05, cor="\033[0m", end="\n"):
             time.sleep(delay)
 
     print("\033[0m", end=end)
+
+
+def color_print(texto, cor="\033[91m"):
+    print(cor+texto+"\033[0m")
+    
 
 def normalizar_texto(texto):
     texto = texto.lower().strip()
@@ -57,6 +67,7 @@ def normalizar_texto(texto):
 
     # Remove _ do início e do final
     return texto.strip("_")
+
 
 def descricao_efeito(hab_dados):
     tipos = hab_dados["tipos"]

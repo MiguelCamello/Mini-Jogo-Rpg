@@ -15,3 +15,6 @@ class InimigoInexistenteError(Exception):
 
 class EfeitoInexistenteError(Exception):
     pass
+
+class CorInexistenteError(Exception):
+    pass
