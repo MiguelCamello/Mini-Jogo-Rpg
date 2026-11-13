@@ -1,5 +1,6 @@
 from utils.sorteio import sortear_quantidade, sortear_drops
-from utils.erros import ManaInsuficienteError, SpriteInexistenteError
+from utils.erros import SpriteInexistenteError
+from interface.formatação import slow_print
 import random as rm
 
 class Inimigo:
@@ -32,17 +33,17 @@ class Inimigo:
         return self.vida > 0
 
     def morrer(self, atacante):
-        print(f"{self.nome} foi morto por {atacante.nome}!")
+        slow_print(f"{self.nome} foi morto por {atacante.nome}!", delay=0.02)
 
         self.vivo
 
         atacante.ganhou_exp(self.exp_drop)
-        print(f"{atacante.nome} ganhou {self.exp_drop} de exp!")
+        slow_print(f"{atacante.nome} ganhou {self.exp_drop} de exp!", delay=0.02)
 
         for item, chance in self.drops.items():
             if sortear_drops(chance):
                 atacante.ganhou_item(item)
-                print(f"{atacante.nome} ganhou {item}!")
+                slow_print(f"{atacante.nome} ganhou {item}!", delay=0.02)
 
     def descansar(self):
         self.mana = min(
@@ -83,7 +84,7 @@ class Inimigo:
         habilidade_req = rm.choice(habilidades_disponiveis)
         habilidade = self.habilidades_json[habilidade_req]
 
-        print(f"{self.nome} usou a habilidade {habilidade['nome']} no {alvo.nome}!")
+        print(f"{self.nome} usou a habilidade {habilidade['nome']}!")
 
         if "dano" in habilidade["tipos"]:
             alvo.tomou_dano(habilidade, self)

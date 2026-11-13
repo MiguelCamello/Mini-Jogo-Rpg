@@ -3,14 +3,15 @@
     "goblin": {
         "sprite": "goblin",
         "nome": "Goblin",
-        "mana": 100,
+        "dificuldade": "Fácil",
+        "mana": 50,
         "defesa": 0,
-        "vida": 100,
+        "vida": 85,
         "habilidades_possiveis": [
             "soco_fraco",
             "cura_leve"
         ],
-        "exp_drop": 100,
+        "exp_drop": 45,
         "drops": {
             "faca": 10,
             "colar": 10
@@ -19,14 +20,15 @@
     "esqueleto": {
         "sprite": "esqueleto",
         "nome": "Esqueleto",
-        "mana": 85,
-        "defesa": 20,
-        "vida": 80,
+        "dificuldade": "Médio",
+        "mana": 65,
+        "defesa": 12,
+        "vida": 100,
         "habilidades_possiveis": [
             "flechada",
             "soco_médio"
         ],
-        "exp_drop": 120,
+        "exp_drop": 75,
         "drops": {
             "osso": 50,
             "capacete_de_ferro": 10
@@ -35,15 +37,16 @@
     "lobo": {
         "sprite": "cachorro",
         "nome": "Lobo",
-        "mana": 90,
+        "dificuldade": "Fácil",
+        "mana": 50,
         "defesa": 5,
-        "vida": 75,
+        "vida": 90,
         "habilidades_possiveis": [
             "mordida",
             "ataque_rapido",
             "uivo"
         ],
-        "exp_drop": 80,
+        "exp_drop": 50,
         "drops": {
             "pele_de_lobo": 40,
             "presa_de_lobo": 20
@@ -52,15 +55,16 @@
     "orc": {
         "sprite": "fantasma",
         "nome": "Orc",
-        "mana": 120,
-        "defesa": 15,
-        "vida": 150,
+        "dificuldade": "Difícil",
+        "mana": 75,
+        "defesa": 12,
+        "vida": 175,
         "habilidades_possiveis": [
             "soco_forte",
             "soco_pesado",
             "golpe_brutal"
         ],
-        "exp_drop": 180,
+        "exp_drop": 130,
         "drops": {
             "machado_de_ferro": 15,
             "carne_de_orc": 50
@@ -69,15 +73,16 @@
     "morcego_gigante": {
         "sprite": "morcego",
         "nome": "Morcego gigante",
-        "mana": 70,
+        "dificuldade": "Muito fácil",
+        "mana": 35,
         "defesa": 0,
-        "vida": 55,
+        "vida": 60,
         "habilidades_possiveis": [
             "mordida",
             "ataque_rapido",
             "drenar_sangue"
         ],
-        "exp_drop": 65,
+        "exp_drop": 30,
         "drops": {
             "asa_de_morcego": 35,
             "presa_de_morcego": 15
@@ -85,16 +90,17 @@
     },
     "zumbi": {
         "sprite": "zumbi",
-        "nome": "zumbi",
-        "mana": 60,
+        "nome": "Zumbi",
+        "dificuldade": "Médio",
+        "mana": 45,
         "defesa": 5,
-        "vida": 130,
+        "vida": 145,
         "habilidades_possiveis": [
             "mordida",
             "golpe_podre",
             "golpe_vampirico"
         ],
-        "exp_drop": 110,
+        "exp_drop": 85,
         "drops": {
             "carne_podre": 60,
             "fragmento_osseo": 25
@@ -103,15 +109,16 @@
     "cavaleiro_esqueleto": {
         "sprite": "esqueleto",
         "nome": "Cavaleiro esqueleto",
-        "mana": 110,
-        "defesa": 35,
-        "vida": 120,
+        "dificuldade": "Difícil",
+        "mana": 90,
+        "defesa": 25,
+        "vida": 145,
         "habilidades_possiveis": [
             "corte_raso",
             "golpe_pesado",
             "estocada"
         ],
-        "exp_drop": 220,
+        "exp_drop": 150,
         "drops": {
             "espada_de_ferro": 20,
             "capacete_de_ferro": 15,
@@ -121,15 +128,16 @@
     "mago_sombrio": {
         "sprite": "monstro",
         "nome": "Mago sombrio",
-        "mana": 150,
+        "dificuldade": "Difícil",
+        "mana": 130,
         "defesa": 0,
-        "vida": 85,
+        "vida": 105,
         "habilidades_possiveis": [
             "bola_sombria",
             "cura_leve",
             "golpe_vampirico"
         ],
-        "exp_drop": 250,
+        "exp_drop": 160,
         "drops": {
             "cajado_sombrio": 10,
             "cristal_magico": 30
@@ -138,15 +146,16 @@
     "golem_de_pedra": {
         "sprite": "caixa",
         "nome": "Golem de pedra",
+        "dificuldade": "Muito difícil",
         "mana": 100,
-        "defesa": 50,
+        "defesa": 35,
         "vida": 250,
         "habilidades_possiveis": [
             "soco_pesado",
             "pedrada",
             "terremoto"
         ],
-        "exp_drop": 300,
+        "exp_drop": 220,
         "drops": {
             "fragmento_de_pedra": 60,
             "nucleo_de_golem": 10
@@ -155,15 +164,16 @@
     "vampiro": {
         "sprite": "monstro_triste",
         "nome": "Vampiro",
-        "mana": 140,
+        "dificuldade": "Muito difícil",
+        "mana": 120,
         "defesa": 15,
-        "vida": 180,
+        "vida": 190,
         "habilidades_possiveis": [
             "golpe_vampirico",
             "drenar_sangue",
             "cura_media"
         ],
-        "exp_drop": 350,
+        "exp_drop": 250,
         "drops": {
             "capa_vampirica": 15,
             "frasco_de_sangue": 40,
@@ -172,16 +182,17 @@
     },
     "dragao_jovem": {
         "sprite": "dragao",
-        "nome": "Dragao jovem",
-        "mana": 180,
-        "defesa": 30,
+        "nome": "Dragão jovem",
+        "dificuldade": "Chefe",
+        "mana": 160,
+        "defesa": 25,
         "vida": 350,
         "habilidades_possiveis": [
             "mordida",
             "sopro_de_fogo",
             "golpe_brutal"
         ],
-        "exp_drop": 600,
+        "exp_drop": 400,
         "drops": {
             "escama_de_dragao": 50,
             "presa_de_dragao": 30,

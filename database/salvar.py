@@ -86,8 +86,7 @@ def salvar_player(player_obj):
                 id_item = getOrCreate_item(item, conn=conn)
                 players_itens_db.create(
                     player_id, id_item, quantia, conn=conn)
-
-            print(f"Dados de {player_obj.nome} salvo com sucesso!")
+                
     return player_id
 
 
@@ -114,7 +113,7 @@ def carregar_player(player_id):
                 habilidades=habilidades
             )
 
-def atualizar_player(player_id, player_obj, conn=None):
+def atualizar_player(player_id, player_obj):
     with closing(conectar()) as conn:
         with conn:
             players_db.update(
@@ -150,7 +149,7 @@ def atualizar_player(player_id, player_obj, conn=None):
                 players_itens_db.create(
                     player_id, id_item, quantia, conn=conn)
 
-def deleter_player(player_id):
+def deletar_player(player_id):
     players_db.delete(player_id)
     # o sql se encarrega de deletar as tabelas m:m
     # usando o ON DELETE CASCADE

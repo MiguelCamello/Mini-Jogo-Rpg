@@ -10,6 +10,7 @@ class Cores:
         dados = carregar_json(cores=True)["cores"]
 
         self.PRETO = f"\033[{dados['cores']['preto']}m"
+        self.PRETO2 = f"\033[{dados['cores']['preto2']}m"
         self.VERMELHO = f"\033[{dados['cores']['vermelho']}m"
         self.DOURADO = f"\033[{dados['cores']['dourado']}m"
         self.AZUL = f"\033[{dados['cores']['azul']}m"

@@ -12,7 +12,7 @@ def barra_exp(maximo=1, atual=1, nivel=1):
     exp = str(atual)+"/"+str(maximo)
     linhas = {
         "l1": f" {c_obj.VERDE}{" ____":<29}{c_obj.RESET}",
-        "l2": f" {c_obj.VERDE}{"|    | Experiência":<21}{exp:<8}{c_obj.RESET}",
+        "l2": f" {c_obj.VERDE}{"|    | Exp":<18}{exp:>8}{c_obj.RESET}{" "*3}",
         "l3": f" {c_obj.VERDE}| {nivel:02d} |{c_obj.RESET}{barra(maximo, atual, 20, c_obj.VERDE):<32}",
         "l4": f" {c_obj.VERDE}{"|____|":<29}{c_obj.RESET}"}
     return linhas

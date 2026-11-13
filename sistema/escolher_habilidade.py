@@ -9,6 +9,7 @@ from utils.erros import *
 import time
 
 def escolher_habilidade(player_obj):
+
     escolhendo_hab=True
     while escolhendo_hab:  # escolha de habilidade para se usar
         try:

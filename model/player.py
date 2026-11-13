@@ -1,3 +1,6 @@
+from sistema.novas_habilidades import novas_habilidades
+from utils.sorteio import sortear_habilidades
+from interface.formatação import slow_print
 from utils.erros import *
 import random as rm
 
@@ -43,7 +46,7 @@ class Player:
 
     def morrer(self, atacante):
         self.vivo
-        print(f"Você morreu para um {atacante}")
+        slow_print(f"Você morreu para um {atacante}", delay=0.1)
         # vou fazer penalidade
 
     def descansar(self):
@@ -75,6 +78,29 @@ class Player:
             return
         self.estados.append(efeito)
 
+    def calculo_habilidades(self):
+        NIVEIS_HABILIDADES = [
+            2, 4, 6, 9, 12, 16, 20
+        ]
+        if self.nivel in NIVEIS_HABILIDADES or self.nivel % 20 == 0:
+            hab_sorteadas = sortear_habilidades(self, self.habilidades_json)
+            novas_habilidades(self, hab_sorteadas)
+
+    def calculo_lvlUp(self):
+        nivel = self.nivel - 1
+
+        self.exp_necessario = 200 + (nivel * 50) + (nivel ** 2 * 10)
+
+        self.vida_maxima = 150 + (nivel * 20)
+        self.mana_maxima = 100 + (nivel * 12)
+        self.defesa = 10 + round(nivel * 1.2)
+
+        # Restaura vida e mana
+        self.vida = self.vida_maxima
+        self.mana = self.mana_maxima    
+
+        self.calculo_habilidades()
+
     def ganhou_exp(self, exp):
         if exp <= 0:
             return print("Esse valor de exp é invalido!")
@@ -84,15 +110,6 @@ class Player:
             self.exp -= self.exp_necessario
             self.nivel += 1
             self.calculo_lvlUp()
-
-    def calculo_lvlUp(self):
-        self.exp_necessario = 200+(self.nivel**2)
-        self.mana_maxima = 50+(self.nivel*2)
-        self.vida_maxima = 100+(self.nivel*2)
-        self.defesa = round(10+(self.nivel*1.5))
-        #restaura vida, mana
-        self.vida = self.vida_maxima
-        self.mana = self.mana_maxima
 
     def ganhou_item(self, item, quantia=1):
         if item not in self.inventario:
@@ -104,7 +121,7 @@ class Player:
         habilidade_adquirida = habilidade_adquirida.lower()
 
         if habilidade_adquirida not in self.habilidades_json:
-            raise HabilidadeInexistenteError("Está habilidade não existe!")
+            raise HabilidadeInexistenteError
         if habilidade_adquirida in self.habilidades:
             return print(f"{self.nome} Ganhou uma habilidade repetida!")
         

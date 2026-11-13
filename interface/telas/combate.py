@@ -48,7 +48,7 @@ def tela_combate(player_obj, inimigo_obj):
 
     print(f"""
 {linha}
-|    {"== RPG CAMELLO ==":^84}{c_obj.VERMELHO}[X]{c_obj.RESET} |
+|        {"== RPG CAMELLO ==":^76}{c_obj.VERMELHO}[Pause]{c_obj.RESET} |
 {linha}
 {espaco}
 {espaco}
